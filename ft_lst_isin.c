@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:00:52 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 19:49:31 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 20:09:26 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_lst_isin(t_list **lst, void *elem, size_t size)
 	current = *lst;
 	while (current)
 	{
-		if (ft_memcmp(current->content, elem, size))
+		if (!ft_memcmp(current->content, elem, size))
 			return (1);
 		current = current->next;
 	}
