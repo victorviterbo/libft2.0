@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 13:25:46 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:05:32 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ char	*agglutinate(int fd, char *g_lst_files, char *line);
 char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
 long	ft_min(long a, long b);
 long	ft_max(long a, long b);
+int		ft_lst_isin(t_list **lst, void *elem, size_t size);
 
 #endif
