@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:17:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/10/13 13:59:00 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 13:00:01 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current;
 	t_list	*next;
 
-	if (!lst || !*(lst))
+	if (!lst)
 		return ;
 	current = *lst;
 	while (current)
