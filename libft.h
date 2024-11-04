@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 15:06:53 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:43:24 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int		ft_isnumber(char *str);
 long	ft_min(long a, long b);
 long	ft_max(long a, long b);
 int		ft_lst_isin(t_list **lst, void *elem, size_t size);
+int		ft_lstmax(t_list **lst);
+int		ft_lstmin(t_list **lst);
 
 char	*get_next_line(int fd);
 char	*agglutinate(int fd, char *g_lst_files, char *line);

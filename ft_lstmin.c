@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   ft_lstmin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:20:55 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 15:33:08 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/11/04 15:40:37 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/11/04 15:43:09 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_max(long a, long b);
+int	ft_lstmin(t_list **lst);
 
-long	ft_max(long a, long b)
+int	ft_lstmin(t_list **lst)
 {
-	if (a >= b)
-		return (a);
-	else
-		return (b);
+	int		min;
+	t_list	*current;
+
+	min = INT_MAX;
+	current = *lst;
+	while (current)
+	{
+		min = ft_min(min, *(int *)current->content);
+		current = current->next;
+	}
+	return (min);
 }
