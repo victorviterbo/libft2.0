@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:07:59 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 16:08:53 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:49:24 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ size_t	arrlen(char **array)
 
 	i = 0;
 	while (*(array + i))
-        i++;
-    return (i);
+		i++;
+	return (i);
 }
