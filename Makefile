@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/11/04 09:14:53 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/11/04 13:26:07 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS_BONUS =	ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstadd_back_bonus.c
 				ft_lstmap_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
 				ft_lstsize_bonus.c ft_lstnew_bonus.c
 
-SRCS_XTRA = ft_strjoin_ip.c ft_isnumber.c get_next_line_bonus.c
+SRCS_XTRA = ft_strjoin_ip.c ft_isnumber.c get_next_line_bonus.c ft_min.c ft_max.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
