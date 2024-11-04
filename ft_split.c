@@ -6,14 +6,13 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:02:00 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/10/13 13:53:46 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:09:39 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char		**ft_split(char const *s, char c);
-static void	*free_array(char **strarray, size_t size);
 static int	count_segments(char const *s, char c);
 static int	go_to_next(const char *s, char c, size_t i, int is_c);
 
@@ -43,20 +42,6 @@ char	**ft_split(char const *s, char c)
 	}
 	*(strarray + k) = NULL;
 	return (strarray);
-}
-
-static void	*free_array(char **strarray, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < size)
-	{
-		free(*(strarray + i));
-		i++;
-	}
-	free(strarray);
-	return (NULL);
 }
 
 static int	count_segments(char const *s, char c)
