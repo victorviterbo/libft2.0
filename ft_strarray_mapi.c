@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:49:57 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 19:52:01 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/04 19:58:52 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *))
 	i = 0;
 	if (!strarray || !*strarray)
 		return (NULL);
-	newarray = ft_calloc(ft_arrlen(strarray), sizeof(char **));
+	newarray = ft_calloc(arrlen(strarray), sizeof(char **));
 	if (!newarray)
 		return (NULL);
 	while (*(strarray + i))
