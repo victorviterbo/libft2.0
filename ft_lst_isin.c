@@ -6,20 +6,20 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:00:52 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 14:30:18 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:37:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lst_isin(t_list **lst, void *elem, size_t size);
+int	ft_lst_isin(t_list **lst, void *elem, int size);
 
-int	ft_lst_isin(t_list **lst, void *elem, size_t size)
+int	ft_lst_isin(t_list **lst, void *elem, int size)
 {
 	t_list	*current;
 
-	if (!lst)
-		return (0);
+	if (!lst || !elem)
+		return (lst == NULL && elem == NULL);
 	current = *lst;
 	while (current)
 	{

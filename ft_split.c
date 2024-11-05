@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:02:00 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 10:37:38 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:31:29 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 		i = go_to_next(s, c, i, 0);
 		*(strarray + k) = ft_substr(s, start, i - start);
 		if (!*(strarray + k))
-			return (ft_free_array(strarray, k));
+			return (ft_free_array((void **)strarray, k), NULL);
 		k++;
 	}
 	*(strarray + k) = NULL;

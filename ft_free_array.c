@@ -6,24 +6,26 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:09:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 10:35:31 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:37:46 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_free_array(char **strarray, size_t size);
+void	ft_free_array(void **array, int size);
 
-void	*ft_free_array(char **strarray, size_t size)
+void	ft_free_array(void **array, int size)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
+	if (!array)
+		return ;
 	while (i < size)
 	{
-		free(*(strarray + i));
+		free(*(array + i));
 		i++;
 	}
-	free(strarray);
-	return (NULL);
+	free(array);
+	return ;
 }

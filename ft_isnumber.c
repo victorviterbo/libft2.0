@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 14:12:38 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:11:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_isnumber(char *str)
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while ((9 <= *(str + i) && *(str + i) <= 13) || *(str + i) == 32)
 		i++;
 	while (*(str + i))
