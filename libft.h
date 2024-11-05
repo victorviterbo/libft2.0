@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 19:48:18 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:36:37 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,10 @@ int		ft_lst_isin(t_list **lst, void *elem, size_t size);
 int		ft_lstmax(t_list **lst);
 int		ft_lstmin(t_list **lst);
 char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
-size_t	arrlen(char **array);
-void	*free_array(char **strarray, size_t size);
-size_t	arrlen(char **array);
+size_t	ft_arrlen(char **array);
+void	*ft_free_array(char **strarray, size_t size);
 
-char	*get_next_line(int fd);
-char	*agglutinate(int fd, char *g_lst_files, char *line);
+char	*ft_get_next_line(int fd);
 char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
 
 #endif

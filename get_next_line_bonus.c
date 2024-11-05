@@ -6,17 +6,17 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 11:48:53 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/03 18:01:32 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:36:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*get_next_line(int fd);
-char	*agglutinate(int fd, char *g_lst_files, char *line);
-char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
+char		*ft_get_next_line(int fd);
+static char	*agglutinate(int fd, char *g_lst_files, char *line);
+char		*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	char		*line;
 	static char	g_lst_files[FD_MAX][(BUFFER_SIZE + 1)];
