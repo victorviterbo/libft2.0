@@ -6,33 +6,39 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:30:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/06 17:29:59 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/06 18:09:21 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float	ft_lstmax(t_list **lst, int dtype);
+double	ft_lstmax(t_list **lst, int dtype);
 
-float	ft_lstmax(t_list **lst, int dtype)
+double	ft_lstmax(t_list **lst, int dtype)
 {
-	float	max;
+	double	max;
+	double	val;
 	t_list	*current;
+	bool	first;
 
-	if (!lst)
+	if (!lst || !*lst)
 		return (0);
-	max = -FLT_MAX;
 	current = *lst;
+	first = true;
+	max = 0;
 	while (current)
 	{
 		if (dtype == SHORT)
-			max = ft_max(max, (double)*(short *)current->content);
+			val = (double)*(short *)current->content;
 		else if (dtype == INT)
-			max = ft_max(max, (double)*(int *)current->content);
+			val = (double)*(int *)current->content;
 		else if (dtype == FLOAT)
-			max = ft_max(max, (double)*(float *)current->content);
+			val = (double)*(float *)current->content;
 		else if (dtype == DOUBLE)
-			max = ft_max(max, (double)*(double *)current->content);
+			val = (double)*(double *)current->content;
+		max = max + (first) * val;
+		first = false;
+		max = ft_max(max, val);
 		current = current->next;
 	}
 	return (max);
