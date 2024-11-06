@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/06 15:52:48 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:30:24 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@
 # include <float.h>
 
 enum Datatype {
+	SHORT,
     INT,
     FLOAT,
+	DOUBLE,
     BOOL,
     CHAR
 };
@@ -88,8 +90,8 @@ int		ft_toupper(int c);
 
 char	*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
 int		ft_isnumber(char *str);
-float	ft_min(float a, float b);
-float	ft_max(float a, float b);
+double	ft_min(double a, double b);
+double	ft_max(double a, double b);
 int		ft_lst_isin(t_list **lst, void *elem, int size);
 float	ft_lstmin(t_list **lst, int dtype);
 float	ft_lstmax(t_list **lst, int dtype);

@@ -6,15 +6,15 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:20:55 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/06 10:26:09 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:28:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float	ft_max(float a, float b);
+double	ft_max(double a, double b);
 
-float	ft_max(float a, float b)
+double	ft_max(double a, double b)
 {
 	if (a >= b)
 		return (a);
