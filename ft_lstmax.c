@@ -6,24 +6,29 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:30:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 15:43:00 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:24:34 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstmax(t_list **lst);
+float	ft_lstmax(t_list **lst, int dtype);
 
-int	ft_lstmax(t_list **lst)
+float	ft_lstmax(t_list **lst, int dtype)
 {
-	int		max;
+	float	max;
 	t_list	*current;
 
-	max = INT_MIN;
+	if (!lst)
+		return (0);
+	max = -FLT_MAX;
 	current = *lst;
 	while (current)
 	{
-		max = ft_max(max, *(int *)current->content);
+		if (dtype == INT)
+			max = ft_max(max, (float)*(int *)current->content);
+		else if (dtype == FLOAT)
+			max = ft_max(max, (float)*(float *)current->content);
 		current = current->next;
 	}
 	return (max);
