@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/07 11:14:35 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:32:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 # include <float.h>
 # include <stdbool.h>
 
-enum Datatype {
+enum e_Datatype {
 	SHORT,
-    INT,
-    FLOAT,
+	INT,
+	FLOAT,
 	DOUBLE,
-    BOOL,
-    CHAR
+	BOOL,
+	CHAR
 };
 
 typedef struct s_list
@@ -99,6 +99,7 @@ double	ft_lstmax(t_list **lst, int dtype);
 char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 size_t	ft_arrlen(char **array);
 void	ft_free_array(void **array, int size);
+double	ft_parse_as(void *ptr, int dtype);
 
 char	*ft_get_next_line(int fd);
 char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);

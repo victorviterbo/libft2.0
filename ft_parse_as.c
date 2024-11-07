@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmax.c                                        :+:      :+:    :+:   */
+/*   ft_parse_as.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:30:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/07 15:31:06 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/11/07 15:26:25 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/11/07 15:33:04 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_lstmax(t_list **lst, int dtype);
+double	ft_parse_as(void *ptr, int dtype);
 
-double	ft_lstmax(t_list **lst, int dtype)
+double	ft_parse_as(void *ptr, int dtype)
 {
-	double	max;
-	t_list	*current;
+	double	val;
 
-	if (!lst || !*lst)
-		return (0);
-	current = *lst;
-	max = ft_parse_as(current->content, dtype);
-	current = current->next;
-	while (current)
-	{
-		max = ft_max(max, ft_parse_as(current->content, dtype));
-		current = current->next;
-	}
-	return (max);
+	if (dtype == SHORT)
+		val = (double)*(short *)ptr;
+	else if (dtype == INT)
+		val = (double)*(int *)ptr;
+	else if (dtype == FLOAT)
+		val = (double)*(float *)ptr;
+	else if (dtype == DOUBLE)
+		val = (double)*(double *)ptr;
+	return (val);
 }

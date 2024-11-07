@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:40:37 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/06 18:10:11 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:31:56 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,16 @@ double	ft_lstmin(t_list **lst, int dtype);
 double	ft_lstmin(t_list **lst, int dtype)
 {
 	double	min;
-	double	val;
 	t_list	*current;
-	bool	first;
 
 	if (!lst || !*lst)
 		return (0);
 	current = *lst;
-	first = true;
-	min = 0;
+	min = ft_parse_as(current->content, dtype);
+	current = current->next;
 	while (current)
 	{
-		if (dtype == SHORT)
-			val = (double)*(short *)current->content;
-		else if (dtype == INT)
-			val = (double)*(int *)current->content;
-		else if (dtype == FLOAT)
-			val = (double)*(float *)current->content;
-		else if (dtype == DOUBLE)
-			val = (double)*(double *)current->content;
-		min = min + (first) * val;
-		first = false;
-		min = ft_min(min, val);
+		min = ft_min(min, ft_parse_as(current->content, dtype));
 		current = current->next;
 	}
 	return (min);
