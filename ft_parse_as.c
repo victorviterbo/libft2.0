@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:26:25 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/07 15:33:04 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:34:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ double	ft_parse_as(void *ptr, int dtype)
 		val = (double)*(float *)ptr;
 	else if (dtype == DOUBLE)
 		val = (double)*(double *)ptr;
+	else
+		val = 0;
 	return (val);
 }
