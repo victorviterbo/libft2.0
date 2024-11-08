@@ -21,6 +21,29 @@ if [ "$norm_ok" -ne 0 ]; then
 	exit 1
 fi
 
+make re
+
+if [ $? -ne 0 ]; then
+	echo "Could not compile with make re, git push aborted !"
+	exit 1
+fi
+
+make bonus
+
+if [ $? -ne 0 ]; then
+	echo "Could not compile with make bonus, git push aborted !"
+	exit 1
+fi
+
+make xtra
+
+if [ $? -ne 0 ]; then
+	echo "Could not compile with make xtra, git push aborted !"
+	exit 1
+fi
+
+
+
 cd tests/
 
 cc -w -fsanitize=address *.c ../*.c -o runtest
