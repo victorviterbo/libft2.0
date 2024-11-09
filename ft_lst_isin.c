@@ -6,34 +6,36 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:00:52 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 18:37:16 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/09 15:18:43 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lst_isin(t_list **lst, void *elem, int size);
+t_list	*ft_lst_isin(t_list **lst, void *elem, int size);
 
-int	ft_lst_isin(t_list **lst, void *elem, int size)
+t_list	*ft_lst_isin(t_list **lst, void *elem, int size)
 {
 	t_list	*current;
 
-	if (!lst || !elem)
-		return (lst == NULL && elem == NULL);
+	if (!lst)
+		return (NULL);
 	current = *lst;
 	while (current)
 	{
-		if (size == -1)
+		if (!elem && !current->content)
+			return (current);
+		if (elem && size == -1)
 		{
 			if (!ft_strncmp(current->content, elem, ft_strlen(elem)))
-				return (1);
+				return (current);
 		}
-		else
+		else if (elem)
 		{
 			if (!ft_memcmp(current->content, elem, size))
-				return (1);
+				return (current);
 		}
 		current = current->next;
 	}
-	return (0);
+	return (NULL);
 }
