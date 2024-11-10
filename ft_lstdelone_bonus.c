@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 14:32:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 12:47:41 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/10 17:57:21 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst)
 		return ;
-	del(lst->content);
+	if (lst->content)
+		del(lst->content);
 	free(lst);
 	return ;
 }
