@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/11 20:03:37 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:17:02 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 size_t	ft_arrlen(char **array);
 void	ft_free_array(void **array, int size);
 double	ft_parse_as(void *ptr, int dtype);
-t_list	**ft_lstcut(t_list **out, int start, int end);
+t_list	**ft_lstcut(t_list **lst, void (*del)(void *), int start, int end);
 
 char	*ft_get_next_line(int fd);
 char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
