@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:01:49 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/11 20:02:14 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:12:58 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	**ft_lstcut(t_list **out, int start, int end);
 
-t_list	**ft_lstcut(t_list **out, int start, int end)
+t_list	**ft_lstcut(t_list **lst, int start, int end)
 {
 	t_list	*current;
 	t_list	*last;
@@ -22,22 +22,22 @@ t_list	**ft_lstcut(t_list **out, int start, int end)
 	int		i;
 
 	i = 0;
-	current = *out;
+	current = *lst;
 	while (current)
 	{
 		next = current->next;
-		if (i < start)
+		if (i == start - 1)
 			last = current;
 		else if (start <= i && i < end)
 			ft_lstdelone(current, free);
 		else if (i == end && start)
 			last->next = current;
 		else if (i == end)
-			*out = current;
+			*lst = current;
 		current = next;
 		i++;
 	}
 	if (i <= end)
 		last->next = NULL;
-	return (out);
+	return (lst);
 }
