@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 15:44:29 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:45:13 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_isnumber(char *str)
 		i++;
 	if (*(str + i) && (*(str + i) == '+' || *(str + i) == '-'))
 		i++;
-	if (!ftstrlen(str + i))
+	if (!ft_strlen(str + i))
 		return (0);
 	while (*(str + i))
 	{
