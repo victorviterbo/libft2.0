@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:01:49 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 13:28:45 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:51:46 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end)
 		return ;
 	todel_end = ft_lst_getn(lst, end - 1);
 	if (start)
-		ft_lst_getn(lst, start - 1)->next = ft_lst_getn(lst, end);
+		(ft_lst_getn(lst, start - 1))->next = ft_lst_getn(lst, end);
 	else if (ft_lst_getn(lst, end))
 		*lst = ft_lst_getn(lst, end);
 	else
