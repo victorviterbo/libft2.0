@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 15:45:13 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:48:36 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_isnumber(char *str)
 		i++;
 	if (*(str + i) && (*(str + i) == '+' || *(str + i) == '-'))
 		i++;
-	if (!ft_strlen(str + i))
+	if (!*(str + i))
 		return (0);
 	while (*(str + i))
 	{
@@ -39,5 +39,5 @@ int	ft_isnumber(char *str)
 		return (ft_memcmp(ft_itoa(INT_MAX), str, ft_strlen(str)) >= 0);
 	else if (ft_strlen(str) == ft_strlen(ft_itoa(INT_MIN)))
 		return (ft_memcmp(ft_itoa(INT_MIN), str, ft_strlen(str)) >= 0);
-	return (0);
+	return (1);
 }
