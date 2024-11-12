@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lst_getn.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 14:32:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 11:18:37 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/11/12 11:24:52 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/11/12 11:28:07 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+t_list	*ft_lst_getn(t_list **lst, int n);
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*ft_lst_getn(t_list **lst, int n)
 {
+	int		i;
+	t_list	*current;
+
+	i = 0;
 	if (!lst)
-		return ;
-	if (lst->content)
-		del(lst->content);
-	free(lst);
-	return ;
+		return (NULL);
+	current = *lst;
+	while (current)
+	{
+		if (i == n)
+			return (current);
+		current = current->next;
+		i++;
+	}
+	return (NULL);
 }
