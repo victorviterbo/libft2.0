@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 11:30:30 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:41:30 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ enum e_Datatype {
 
 typedef struct s_list
 {
-	void			*content;
+	union
+	{
+		void			*content;
+	};
 	struct s_list	*next;
 }	t_list;
 

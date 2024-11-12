@@ -46,7 +46,7 @@ fi
 
 cd tests/
 
-cc -w -fsanitize=address *.c ../*.c -o runtest
+cc -Wall -Wextra -Werror -fsanitize=address *.c ../*.c -o runtest; ./runtest
 
 ./runtest
 

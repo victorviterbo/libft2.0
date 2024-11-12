@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:01:49 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 11:22:11 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:28:45 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,23 @@ void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end);
 
 void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end)
 {
-	t_list	*current;
-	t_list	*last;
-	t_list	*next;
-	int		i;
+	t_list	*todel_start;
+	t_list	*todel_end;
 
-	i = 0;
-	if (!lst)
+	if (!lst || end <= start || start < 0)
 		return ;
-	current = *lst;
-	last = NULL;
-	while (current)
-	{
-		next = current->next;
-		if (i == start - 1)
-			last = current;
-		else if (start <= i && i < end)
-			ft_lstdelone(current, del);
-		else if (i == end && start)
-			last->next = current;
-		else if (i == end)
-			*lst = current;
-		i++;
-		current = next;
-	}
-	if (i < end && last)
-		last->next = NULL;
+	todel_start = ft_lst_getn(lst, start);
+	if (!todel_start)
+		return ;
+	todel_end = ft_lst_getn(lst, end - 1);
+	if (start)
+		ft_lst_getn(lst, start - 1)->next = ft_lst_getn(lst, end);
+	else if (ft_lst_getn(lst, end))
+		*lst = ft_lst_getn(lst, end);
+	else
+		return ;
+	if (todel_end)
+		todel_end->next = NULL;
+	ft_lstclear(&todel_start, del);
 	return ;
 }
