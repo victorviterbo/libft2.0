@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 15:17:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/14 13:41:14 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/11/14 21:52:14 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/11/14 21:54:15 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+double	ft_abs(double n);
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+double	ft_abs(double n)
 {
-	t_list	*current;
-	t_list	*next;
-
-	if (!lst)
-		return ;
-	current = *lst;
-	while (current)
-	{
-		next = current->next;
-		ft_lstdelone(current, del);
-		current = next;
-	}
-	*lst = NULL;
-	return ;
+	if (n < 0)
+		return (-n);
+	return (n);
 }

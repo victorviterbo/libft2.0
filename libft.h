@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 13:55:58 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/14 22:04:42 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list	*lst, void (*f)(void	*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list	**ft_lstget_nth(t_list **lst, unsigned int n);
 t_list	*ft_lstsearch(t_list **lst, void	*needle, size_t needle_size);
 
 int		ft_atoi(const char *str);
@@ -105,6 +104,7 @@ void	ft_free_array(void **array, int size);
 double	ft_parse_as(void *ptr, int dtype);
 void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end);
 t_list	*ft_lst_getn(t_list **lst, int n);
+double	ft_abs(double n);
 
 char	*ft_get_next_line(int fd);
 char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
