@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/17 20:44:37 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/17 22:41:04 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ t_list	*ft_lst_isin_void(t_list **lst, void *elem, int size);
 t_list	*ft_lst_isin_int(t_list **lst, int elem);
 double	ft_lstmin(t_list **lst, int dtype);
 double	ft_lstmax(t_list **lst, int dtype);
+int		ft_lstmini(t_list **lst);
+int		ft_lstmaxi(t_list **lst);
 char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 size_t	ft_arrlen(char **array);
 void	ft_free_array(void **array, int size);
