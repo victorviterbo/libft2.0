@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap_void.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:34:45 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/04 12:59:50 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:25:02 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap_void(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap_void(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*current;
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	fcontent = f(lst->content);
 	if (!fcontent)
 		return (NULL);
-	new_lst = ft_lstnew(fcontent);
+	new_lst = ft_lstnew_void(fcontent);
 	if (!new_lst)
 		return (free(fcontent), NULL);
 	current = new_lst;
@@ -35,7 +35,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		fcontent = f(lst->content);
 		if (!fcontent)
 			return (ft_lstclear(&new_lst, del), NULL);
-		current->next = ft_lstnew(fcontent);
+		current->next = ft_lstnew_void(fcontent);
 		if (!(current->next))
 			return (ft_lstclear(&new_lst, del), free(fcontent), NULL);
 		current = current->next;
