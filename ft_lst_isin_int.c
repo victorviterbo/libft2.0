@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_isin.c                                      :+:      :+:    :+:   */
+/*   ft_lst_isin_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:00:52 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/09 15:18:43 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:44:15 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lst_isin(t_list **lst, void *elem, int size);
+t_list	*ft_lst_isin_int(t_list **lst, int elem);
 
-t_list	*ft_lst_isin(t_list **lst, void *elem, int size)
+t_list	*ft_lst_isin_int(t_list **lst, int elem)
 {
 	t_list	*current;
 
@@ -23,18 +23,8 @@ t_list	*ft_lst_isin(t_list **lst, void *elem, int size)
 	current = *lst;
 	while (current)
 	{
-		if (!elem && !current->content)
+		if (current->i == elem)
 			return (current);
-		if (elem && size == -1)
-		{
-			if (!ft_strncmp(current->content, elem, ft_strlen(elem)))
-				return (current);
-		}
-		else if (elem)
-		{
-			if (!ft_memcmp(current->content, elem, size))
-				return (current);
-		}
 		current = current->next;
 	}
 	return (NULL);

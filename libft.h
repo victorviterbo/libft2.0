@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/17 20:28:12 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:44:37 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ char	*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
 int		ft_isnumber(char *str);
 double	ft_min(double a, double b);
 double	ft_max(double a, double b);
-t_list	*ft_lst_isin(t_list **lst, void *elem, int size);
+t_list	*ft_lst_isin_void(t_list **lst, void *elem, int size);
+t_list	*ft_lst_isin_int(t_list **lst, int elem);
 double	ft_lstmin(t_list **lst, int dtype);
 double	ft_lstmax(t_list **lst, int dtype);
 char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
