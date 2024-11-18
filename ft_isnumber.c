@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/18 16:54:02 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:54:45 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ static bool	isin_intrange(char *str, bool isneg)
 	char	*max;
 	char	*min;
 
-	printf("str = >%s<\n", str);
 	if (ft_strlen(str) > get_size(INT_MAX))
 		return (0);
 	else if ((ft_strlen(str) == get_size(INT_MAX)) && isneg == false)
