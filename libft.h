@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/17 22:41:04 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:49:15 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #  define FD_MAX 1024
 # endif
 
+# include <stddef.h>
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
