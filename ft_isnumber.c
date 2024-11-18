@@ -6,11 +6,17 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/18 15:21:25 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:50:40 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <stdio.h>
+
+
+
+
 
 int				ft_isnumber(char *str);
 static size_t	get_size(long n);
@@ -47,6 +53,7 @@ static bool	isin_intrange(char *str, bool isneg)
 	char	*max;
 	char	*min;
 
+	printf("str = >%s<\n", str);
 	if (ft_strlen(str) > get_size(INT_MAX))
 		return (0);
 	else if ((ft_strlen(str) == get_size(INT_MAX)) && isneg == false)
@@ -58,8 +65,7 @@ static bool	isin_intrange(char *str, bool isneg)
 	else if (ft_strlen(str) == get_size(INT_MAX) && isneg == true)
 	{
 		min = ft_itoa(INT_MIN);
-		min++;
-		if (ft_memcmp(min, str, ft_strlen(str)) < 0)
+		if (ft_memcmp(min + 1, str, ft_strlen(str)) < 0)
 			return (free(min), 0);
 	}
 	return (1);
