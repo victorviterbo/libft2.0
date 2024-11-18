@@ -6,17 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/18 16:50:40 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:54:02 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
-
-
-
-
 
 int				ft_isnumber(char *str);
 static size_t	get_size(long n);
