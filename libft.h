@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/19 13:30:46 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:34:25 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end);
 t_list	*ft_lst_getn(t_list **lst, int n);
 double	ft_abs(double n);
 void	ft_dummy(void *ptr);
+void	ft_swap_void(void **ptr1, void **ptr2);
 
 char	*ft_get_next_line(int fd);
 char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
