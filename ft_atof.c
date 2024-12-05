@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:34:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/04 18:48:26 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:29:39 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ float	ft_atof(char *str)
 		decimal /= 10;
 		decimal_len--;
 	}
-	ret = integer + decimal * (integer > 0) - decimal * (integer < 0);
+	ret = integer + decimal * (integer >= 0) - decimal * (integer < 0);
 	return (ft_free_array((void **)splitted, 2), ret);
 }
