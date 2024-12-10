@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 11:03:33 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:47:36 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # include <float.h>
 # include <stdbool.h>
 # include <stdarg.h>
+
+# include "printf/ft_printf.h"
 
 enum e_Datatype {
 	SHORT,
