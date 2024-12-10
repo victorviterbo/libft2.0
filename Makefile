@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/10 11:32:59 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/10 11:55:13 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,14 +69,8 @@ SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
 
-
-
-//SRCS = 	$(SRCS_CHARACTERS) $(SRCS_CONVERSIONS) $(SRCS_LISTS) $(SRCS_MATH) \
-//		$(SRCS_MEMORY) $(SRCS_MISCS) $(SRCS_STRINGS) $(SRCS_WRITE_READ)
-
-OBJS =  $(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
+OBJS = $(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
         $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
-
 HEADER = libft.h
 
 CFLAGS = -Wall -Wextra -Werror
@@ -96,33 +90,28 @@ re : fclean all
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-$(OBJS) : $(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
-        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
-
-$(OBJS_CHARACTERS) : $(SRCS_CHARACTERS)
-	$(CC) $(CFLAGS) -c $(SRCS_CHARACTERS) -Icharacters
-
-$(OBJS_CONVERSIONS) : $(SRCS_CONVERSIONS)
-	$(CC) $(CFLAGS) -c $(SRCS_CONVERSIONS)
-
-$(OBJS_MATH):obj/%.o : math/%.c
+objs/%.o: characters/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_MISCS) : $(SRCS_MISCS)
-	$(CC) $(CFLAGS) -c $(SRCS_MISCS) -Imiscs
+objs/%.o: conversions/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_STRINGS) : $(SRCS_STRINGS)
-	$(CC) $(CFLAGS) -c $(SRCS_STRINGS) -Istrings
+objs/%.o: math/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_WRITE_READ) : $(SRCS_WRITE_READ)
-	$(CC) $(CFLAGS) -c $(SRCS_WRITE_READ) -Iwrite_read
+objs/%.o: miscs/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
+objs/%.o: strings/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_LISTS) : $(SRCS_LISTS)
-	$(CC) $(CFLAGS) -c $(SRCS_LISTS) -Ilists
+objs/%.o: write_read/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJS_MEMORY) : $(SRCS_MEMORY)
-	$(CC) $(CFLAGS) -c $(SRCS_MEMORY) -Imemory
+objs/%.o: lists/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
+objs/%.o: memory/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
