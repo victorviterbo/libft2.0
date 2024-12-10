@@ -6,12 +6,11 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/10 11:55:13 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/10 12:19:58 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
 
 CHARACTERS			= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 						ft_isprint.c ft_tolower.c ft_toupper.c
@@ -68,9 +67,13 @@ WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
+PRINTF = ft_conv_utils.o ft_itoa_base.o ft_memutils.o ft_printf.o ft_strutils.o
+
+PRINTF_OBJS = $(addprefix printf/, $(PRINTF))
 
 OBJS = $(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
         $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
+		
 HEADER = libft.h
 
 CFLAGS = -Wall -Wextra -Werror
@@ -88,6 +91,8 @@ fclean : clean
 re : fclean all
 
 $(NAME): $(OBJS)
+	$(MAKE) -C printf/ all
+	ar rcs $(NAME) $(PRINTF_OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 objs/%.o: characters/%.c

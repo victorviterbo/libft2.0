@@ -1,3 +1,6 @@
 [submodule "tests"]
 	path = tests
 	url = git@github.com:victorviterbo/libft2.0_tests.git
+[submodule "printf"]
+	path = printf
+	url = https://github.com/victorviterbo/printf.git
