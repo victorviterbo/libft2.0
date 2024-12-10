@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/10 10:48:04 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/10 11:32:59 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ OBJS_LISTS		 	=	$(patsubst lists%.c, objs%.o, $(SRCS_LISTS))
 MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c ft_log_base.c \
 						ft_max.c ft_min.c ft_norm.c ft_prev_power.c \
 						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c
-SRCS_MATH			=	$(addprefix math/, $(MATH))
-OBJS_MATH		 	=	$(patsubst math%.c, objs%.o, $(SRCS_MATH))
+SRCS_MATH			=	$(MATH:%=math/%)
+OBJS_MATH		 	=	$(SRCS_MATH:math/%.c=objs/%.o)
 
 
 MEMORY				=	ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c \
@@ -103,10 +103,10 @@ $(OBJS_CHARACTERS) : $(SRCS_CHARACTERS)
 	$(CC) $(CFLAGS) -c $(SRCS_CHARACTERS) -Icharacters
 
 $(OBJS_CONVERSIONS) : $(SRCS_CONVERSIONS)
-	$(CC) $(CFLAGS) -c $(SRCS_CONVERSIONS) -Iconversions
+	$(CC) $(CFLAGS) -c $(SRCS_CONVERSIONS)
 
-$(OBJS_MATH) : $(SRCS_MATH)
-	$(CC) $(CFLAGS) -c $(SRCS_MATH) -Imath
+$(OBJS_MATH):obj/%.o : math/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS_MISCS) : $(SRCS_MISCS)
 	$(CC) $(CFLAGS) -c $(SRCS_MISCS) -Imiscs
