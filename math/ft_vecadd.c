@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:34:17 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 10:19:29 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:53:28 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ t_coor	ft_vecadd(t_coor v1, t_coor v2)
 	new_vector.z = v1.z + v2.z;
 	return (new_vector);
 }
-

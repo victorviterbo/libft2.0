@@ -6,11 +6,12 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:42:04 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 11:04:58 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:53:19 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+
 int	ft_log_base(double n, int base_size);
 
 int	ft_log_base(double n, int base_size)
