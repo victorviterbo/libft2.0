@@ -6,9 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:20:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/06 15:21:12 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 10:51:21 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "../libft.h"
 
 t_coor	ft_initvec(double x, double y, double z);
 

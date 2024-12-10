@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:10:12 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/06 15:15:33 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 10:19:29 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 t_coor	ft_vecsubstr(t_coor v1, t_coor v2);
 

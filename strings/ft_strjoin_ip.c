@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:14:52 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 15:40:24 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 10:19:29 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
 

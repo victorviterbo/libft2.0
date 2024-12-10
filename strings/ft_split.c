@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:02:00 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/05 18:31:29 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 10:19:29 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char		**ft_split(char const *s, char c);
 static int	count_segments(char const *s, char c);

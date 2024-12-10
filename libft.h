@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/06 16:08:50 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 10:57:22 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,7 @@
 # include <unistd.h>
 # include <float.h>
 # include <stdbool.h>
-
-# include "characters/characters.h"
-# include "conversions/conversions.h"
-# include "lists/lists.h"
-# include "math/math.h"
-# include "memory/memory.h"
-# include "miscs/miscs.h"
-# include "write_read/write_read.h"
+# include <stdarg.h>
 
 enum e_Datatype {
 	SHORT,
@@ -60,5 +53,96 @@ typedef struct s_list
 	};
 	struct s_list	*next;
 }	t_list;
+
+// CHARACTERS
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
+// CONVERSIONS
+int		ft_atoi(const char *str);
+float	ft_atof(char *str);
+char	*ft_ctoa(char c);
+char	*ft_itoa_base(long long n, char *base);
+char	*ft_itoa(int n);
+char	*ft_utoa_base(unsigned long number, char *base);
+// LISTS
+t_list	*ft_lst_getn(t_list **lst, int n);
+t_list	*ft_lst_isin_int(t_list **lst, int elem);
+t_list	*ft_lst_isin_void(t_list **lst, void *elem, int size);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap_void(t_list *lst, void *(*f)(void *), void (*del)(void *));
+double	ft_lstmax(t_list **lst, int dtype);
+int		ft_lstmaxi(t_list **lst);
+double	ft_lstmin(t_list **lst, int dtype);
+int		ft_lstmini(t_list **lst);
+t_list	*ft_lstnew_int(int i);
+t_list	*ft_lstnew_void(void *content);
+int		ft_lstsize(t_list *lst);
+// MATH
+double	ft_abs(double n);
+double	ft_dotprod(t_coor v1, t_coor v2);
+t_coor	ft_initvec(double x, double y, double z);
+int		get_log_base(double n, int base_size);
+double	ft_max(double a, double b);
+double	ft_min(double a, double b);
+double	ft_norm(t_coor vector);
+double	ft_prev_power(double n, int base_size);
+t_coor	ft_vecadd(t_coor v1, t_coor v2);
+t_coor	ft_vecscale(t_coor base, t_coor tip, float scale);
+t_coor	vec_substr(t_coor v1, t_coor v2);
+t_coor	ft_vecsubstr(t_coor v1, t_coor v2);
+// MEMORY
+void	ft_bzero(void *s, unsigned int n);
+void	*ft_calloc(size_t count, size_t size);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t n);
+void	*ft_memset(void *str, int c, size_t len);
+// MISC
+size_t	ft_arrlen(char **array);
+void	ft_dummy(void *ptr);
+void	ft_free_array(void **array, int size);
+double	ft_parse_as(void *ptr, int dtype);
+char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
+void	ft_swap_void(void **ptr1, void **ptr2);
+// STRINGS
+int		ft_isnumber(char *str);
+char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s1);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *s));
+char	*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlen(const char *str);
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+// WRITE_READ
+char	*ft_get_next_line(int fd);
+int		ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...);
+size_t	print_format(const char **str, va_list argl);
+char	*get_radix(char type, va_list argl);
+char	*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
