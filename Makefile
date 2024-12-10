@@ -6,34 +6,76 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/04 17:48:33 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/06 17:04:30 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS =	ft_strnstr.c ft_isdigit.c ft_putstr_fd.c ft_strlcpy.c ft_strlen.c ft_memcmp.c \
-		ft_putnbr_fd.c ft_strchr.c ft_striteri.c ft_bzero.c ft_strjoin.c ft_isascii.c \
-		ft_memcpy.c ft_isprint.c ft_putendl_fd.c ft_toupper.c ft_split.c ft_strrchr.c \
-		ft_isalpha.c ft_memchr.c ft_putchar_fd.c ft_memset.c ft_substr.c ft_strncmp.c \
-		ft_strmapi.c ft_strtrim.c ft_memmove.c ft_strlcat.c ft_calloc.c ft_strdup.c \
-		ft_atoi.c ft_isalnum.c ft_itoa.c ft_tolower.c
 
-SRCS_BONUS =	ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstadd_back_bonus.c \
-				ft_lstmap_void.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
-				ft_lstsize_bonus.c ft_lstnew_void.c ft_lstnew_int.c
+SRCS_CHARACTERS		= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
+						ft_isnumber.c ft_isprint.c ft_tolower.c ft_toupper.c
+SRCS_CHARACTERS		=	$(addprefix characters, $(SRCS_CHARACTERS))
+OBJS_CHARACTERS 	=	$(patsubst characters%.c, objs%.o, $(SRCS_CHARACTERS))
 
-SRCS_XTRA =	ft_strjoin_ip.c ft_isnumber.c get_next_line_bonus.c ft_min.c ft_max.c \
-			ft_lstmax.c ft_lstmin.c ft_strarray_mapi.c ft_arrlen.c ft_free_array.c ft_parse_as.c \
-			ft_lstcut.c ft_lst_getn.c ft_abs.c ft_lst_isin_void.c ft_lst_isin_int.c \
-			ft_lstmaxi.c ft_lstmini.c ft_dummy.c ft_swap_void.c ft_atof.c
 
-OBJS = $(patsubst %.c, %.o, $(SRCS))
+SRCS_CONVERSIONS	=	ft_atof.c ft_atoi.c ft_ctoa.c ft_itoa.c ft_itoa_base.c \
+						ft_utoa_base.c
+SRCS_CONVERSIONS	=	$(addprefix conversions/, $(SRCS_CONVERSIONS))
+OBJS_CONVERSIONS 	=	$(patsubst conversions%.c, objs%.o, $(SRCS_CONVERSIONS))
 
-OBJS_BONUS = $(patsubst %.c, %.o, $(SRCS_BONUS))
 
-OBJS_XTRA = $(patsubst %.c, %.o, $(SRCS_XTRA))
+SRCS_LISTS			=	ft_lst_getn.c ft_lst_isin_int.c ft_lst_isin_void.c \
+						ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+						ft_lstcut.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+						ft_lstmap_void.c ft_lstmax.c ft_lstmaxi.c ft_lstmin.c \
+						ft_lstmini.c ft_lstnew_int.c ft_lstnew_void.c \
+						ft_lstsize.c
+SRCS_LISTS			=	$(addprefix lists/, $(SRCS_LISTS))
+OBJS_LISTS		 	=	$(patsubst lists%.c, objs%.o, $(SRCS_LISTS))
 
+
+SRCS_MATH			=	ft_abs.c ft_dotprod.c ft_initvec.c ft_log_base.c \
+						ft_max.c ft_min.c ft_norm.c ft_prev_power.c \
+						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c
+SRCS_MATH			=	$(addprefix math/, $(SRCS_MATH))
+OBJS_MATH		 	=	$(patsubst math%.c, objs%.o, $(SRCS_MATH))
+
+
+SRCS_MEMORY			=	ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c \
+						ft_memcpy.c ft_memmove.c ft_memset.c
+SRCS_MEMORY			=	$(addprefix memory/, $(SRCS_MEMORY))
+OBJS_MEMORY		 	=	$(patsubst memory%.c, objs%.o, $(SRCS_MEMORY))
+
+
+SRCS_MISCS			=	ft_arrlen.c ft_dummy.c ft_free_array.c ft_parse_as.c \
+						ft_strarray_mapi.c ft_swap_void.c
+SRCS_MISCS			=	$(addprefix miscs/, $(SRCS_MISCS))
+OBJS_MISCS		 	=	$(patsubst miscs%.c, objs%.o, $(SRCS_MISCS))
+
+
+SRCS_STRINGS		=	ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c \
+						ft_strjoin.c ft_strjoin_ip.c ft_strlcat.c ft_strlcpy.c \
+						ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
+						ft_strrchr.c ft_strtrim.c ft_substr.c
+SRCS_STRINGS		=	$(addprefix strings/, $(SRCS_STRINGS))
+OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
+
+
+SRCS_WRITE_READ		=	ft_get_next_line.c ft_printf.c ft_putchar_fd.c \
+						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+SRCS_WRITE_READ		=	$(addprefix write_read/, $(SRCS_WRITE_READ))
+OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
+
+
+
+
+SRCS = 	$(SRCS_CHARACTERS) $(SRCS_CONVERSIONS) $(SRCS_LISTS) $(SRCS_MATH) \
+		$(SRCS_MEMORY) $(SRCS_MISCS) $(SRCS_STRINGS) $(SRCS_WRITE_READ)
+
+OBJS =  $(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
+        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
+		
 HEADER = libft.h
 
 CFLAGS = -Wall -Wextra -Werror
@@ -43,32 +85,40 @@ CC = cc
 all: $(NAME)
 
 clean :
-	@rm -f $(OBJS)
-	@rm -f $(OBJS_BONUS)
-	@rm -f $(OBJS_XTRA)
+	@rm -f objs/*.o
 
 fclean : clean
 	@rm -f $(NAME)
 
 re : fclean all
 
-bonus : all $(OBJS_BONUS)
-	@ar rcs $(NAME) $(OBJS)
-	@ar rcs $(NAME) $(OBJS_BONUS)
-
-xtra : bonus $(OBJS_XTRA)
-	@ar rcs $(NAME) $(OBJS_XTRA)
-
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJS) : $(SRCS)
-	@$(CC) $(CFLAGS) -c $(SRCS) -I$(HEADER)
+$(OBJS_CHARACTERS) : $(SRCS_CHARACTERS)
+	@$(CC) $(CFLAGS) -c $(SRCS_CHARACTERS) -Icharacters
 
-$(OBJS_BONUS) : $(OBJS) $(SRCS_BONUS)
-	@$(CC) $(CFLAGS) -c $(SRCS_BONUS) -I$(HEADER)
+$(OBJS_CONVERSIONS) : $(SRCS_CONVERSIONS)
+	@$(CC) $(CFLAGS) -c $(SRCS_CONVERSIONS) -Iconversions
 
-$(OBJS_XTRA) : $(OBJS) $(OBJS_BONUS) $(SRCS_XTRA)
-	@$(CC) $(CFLAGS) -c $(SRCS_XTRA) -I$(HEADER)
+$(OBJS_MATH) : $(SRCS_MATH)
+	@$(CC) $(CFLAGS) -c $(SRCS_MATH) -Imath
 
-.PHONY: all clean fclean re bonus xtra
+$(OBJS_MISCS) : $(SRCS_MISCS)
+	@$(CC) $(CFLAGS) -c $(SRCS_MISCS) -Imiscs
+
+$(OBJS_STRINGS) : $(SRCS_STRINGS)
+	@$(CC) $(CFLAGS) -c $(SRCS_STRINGS) -Istrings
+
+$(OBJS_WRITE_READ) : $(SRCS_WRITE_READ)
+	@$(CC) $(CFLAGS) -c $(SRCS_WRITE_READ) -Iwrite_read
+
+
+$(OBJS_LISTS) : $(SRCS_LISTS)
+	@$(CC) $(CFLAGS) -c $(SRCS_LISTS) -Ilists
+
+$(OBJS_MEMORY) : $(SRCS_MEMORY)
+	@$(CC) $(CFLAGS) -c $(SRCS_MEMORY) -Imemory
+
+
+.PHONY: all clean fclean re

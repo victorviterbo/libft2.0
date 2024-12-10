@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_vecadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/04 10:00:42 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/10/11 12:02:32 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/12/06 15:34:17 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/12/06 15:35:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new);
+t_coor	ft_vecadd(t_coor v1, t_coor v2);
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_coor	ft_vecadd(t_coor v1, t_coor v2)
 {
-	if (!lst)
-		return ;
-	new->next = *lst;
-	*lst = new;
-	return ;
+	t_coor	new_vector;
+
+	new_vector.x = v1.x + v2.x;
+	new_vector.y = v1.y + v2.y;
+	new_vector.z = v1.z + v2.z;
+	return (new_vector);
 }
+

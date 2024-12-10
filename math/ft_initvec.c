@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_initvec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 15:28:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/10/11 12:02:44 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/12/06 15:20:08 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/12/06 15:21:12 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+t_coor	ft_initvec(double x, double y, double z);
 
-void	ft_lstiter(t_list	*lst, void (*f)(void	*));
-
-void	ft_lstiter(t_list	*lst, void (*f)(void	*))
+t_coor	ft_initvec(double x, double y, double z)
 {
-	if (!lst)
-		return ;
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
-	return ;
+	t_coor	new_vector;
+
+	new_vector.x = x;
+	new_vector.y = y;
+	new_vector.z = z;
+	return (new_vector);
 }

@@ -6,59 +6,24 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/06 16:08:50 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/06 16:07:22 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef WRITE_READ_H
+# define WRITE_READ_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
-# endif
-
-# ifndef FD_MAX
-#  define FD_MAX 1024
-# endif
-
-# include <stddef.h>
-# include <limits.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <float.h>
-# include <stdbool.h>
-
-# include "characters/characters.h"
-# include "conversions/conversions.h"
-# include "lists/lists.h"
-# include "math/math.h"
-# include "memory/memory.h"
-# include "miscs/miscs.h"
-# include "write_read/write_read.h"
-
-enum e_Datatype {
-	SHORT,
-	INT,
-	FLOAT,
-	DOUBLE,
-	BOOL,
-	CHAR
-};
-
-typedef struct s_coor {
-	double	x;
-	double	y;
-	double	z;
-}	t_coor;
-
-typedef struct s_list
-{
-	union
-	{
-		void	*content;
-		int		i;
-	};
-	struct s_list	*next;
-}	t_list;
+char			*ft_get_next_line(int fd);
+static char		*agglutinate(int fd, char *g_lst_files, char *line);
+int				ft_printf(const char *str, ...);
+static size_t	print_format(char *str, va_list argl);
+static char		*get_radix(char type, va_list argl);
+static char		*set_width(char *formated, char *str, int *width);
+static char		*set_precision(char *formated, char *str, int *precision);
+char			*ft_strjoin_gnl(char const *s1, char const *s2, int in_place);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+void			ft_putstr_fd(char *s, int fd);
 
 #endif

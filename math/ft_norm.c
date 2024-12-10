@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_norm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/04 10:20:37 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/11/12 13:51:04 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/12/03 13:10:02 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/12/06 15:08:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new);
+double	ft_norm(t_coor vector);
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+double	ft_norm(t_coor vector)
 {
-	if (!lst)
-		return ;
-	if (!(*lst))
-		*lst = new;
-	else
-		ft_lstlast(*lst)->next = new;
-	return ;
+	double	norm;
+
+	norm = sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2));
+	return (norm);
 }
