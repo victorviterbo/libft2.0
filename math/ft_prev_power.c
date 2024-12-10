@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:47:56 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 11:15:39 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:26:52 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ double	ft_prev_power(double n, int base_size)
 	double	prev_power;
 
 	prev_power = 1.0;
-	sign = (n < 0);
+	sign = -2 * (n < 0) + 1;
 	if (n < 0)
 		n *= -1;
 	while (n >= base_size)

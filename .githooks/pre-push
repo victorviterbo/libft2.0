@@ -30,7 +30,7 @@ fi
 
 cd tests/
 
-cc -Wall -Wextra -Werror -fsanitize=address *.c ../*.c -o runtest; ./runtest
+cc -Wall -Wextra -Werror -fsanitize=address *.c ../characters/*.c ../conversions/*.c ../lists/*.c  ../math/*.c ../memory/*.c ../miscs/*.c ../strings/*.c ../write_read/*.c -o runtest; ./runtest
 
 ./runtest
 
