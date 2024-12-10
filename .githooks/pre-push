@@ -5,7 +5,7 @@ if ! [ -d "tests/" ]; then
 	exit 1
 fi
 
-files=$(ls *.c *.h 2>/dev/null)
+files=$(ls *.c *.h characters/*.c conversions/*.c lists/*.c math/*.c memory/*.c miscs/*.c printf/*.c strings/*.c write_read/*.c 2>/dev/null)
 
 if [ -z "$files" ]; then
     echo "No .c or .h files found, git push aborted!"
