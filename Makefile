@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/11 18:39:11 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/11 18:48:26 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,8 @@ WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
-PRINTF				=	ft_get_next_line.c ft_putchar_fd.c \
-						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+PRINTF				=	ft_conv_utils.c ft_itoa_base.c ft_memutils.c \
+						ft_printf.c ft_strutils.c
 SRCS_PRINTF			=	$(addprefix printf/, $(PRINTF))
 OBJS_PRINTF		 	=	$(patsubst printf%.c, objs%.o, $(SRCS_PRINTF))
 
