@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/10 12:19:58 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/11 18:31:11 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,10 @@ fclean : clean
 
 re : fclean all
 
-$(NAME): $(OBJS)
+objs_folder :
+	@mkdir -p objs/
+
+$(NAME): objs_folder $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 objs/%.o: printf/%.c
