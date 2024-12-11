@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/11 18:31:11 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/11 18:39:11 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,10 +72,6 @@ PRINTF				=	ft_get_next_line.c ft_putchar_fd.c \
 SRCS_PRINTF			=	$(addprefix printf/, $(PRINTF))
 OBJS_PRINTF		 	=	$(patsubst printf%.c, objs%.o, $(SRCS_PRINTF))
 
-PRINTF = ft_conv_utils.o ft_itoa_base.o ft_memutils.o ft_printf.o ft_strutils.o
-
-PRINTF_OBJS = $(addprefix printf/, $(PRINTF))
-
 OBJS =	$(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
         $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ) \
 		$(OBJS_PRINTF)
@@ -102,9 +98,6 @@ objs_folder :
 $(NAME): objs_folder $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-objs/%.o: printf/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 objs/%.o: characters/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -127,6 +120,9 @@ objs/%.o: lists/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 objs/%.o: memory/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+objs/%.o: printf/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
