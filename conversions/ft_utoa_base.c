@@ -42,9 +42,7 @@ static size_t	ft_ulog_base(unsigned long n, int base_size)
 {
 	size_t	size;
 
-	size = (n < 0);
-	if (n < 0)
-		n *= -1;
+	size = 0;
 	if (base_size <= 0)
 		return (0);
 	if (!n)

@@ -29,8 +29,6 @@
 # include <stdbool.h>
 # include <stdarg.h>
 
-# include "printf/ft_printf.h"
-
 enum e_Datatype {
 	SHORT,
 	INT,
@@ -118,6 +116,13 @@ void	ft_free_array(void **array, int size);
 double	ft_parse_as(void *ptr, int dtype);
 char	**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 void	ft_swap_void(void **ptr1, void **ptr2);
+// PRINTF
+int		ft_printf(const char *str, ...);
+size_t	print_format(const char **str, va_list argl);
+char	*get_radix(char type, va_list argl);
+char	*ft_utoa_base(unsigned long number, char *base);
+char	*ft_itoa_base(long long n, char *base);
+char	*ft_strdup_pf(const char *s1, int null);
 // STRINGS
 int		ft_isnumber(char *str);
 char	**ft_split(char const *s, char c);

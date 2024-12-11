@@ -67,12 +67,18 @@ WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
+PRINTF				=	ft_get_next_line.c ft_putchar_fd.c \
+						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+SRCS_PRINTF			=	$(addprefix printf/, $(PRINTF))
+OBJS_PRINTF		 	=	$(patsubst printf%.c, objs%.o, $(SRCS_PRINTF))
+
 PRINTF = ft_conv_utils.o ft_itoa_base.o ft_memutils.o ft_printf.o ft_strutils.o
 
 PRINTF_OBJS = $(addprefix printf/, $(PRINTF))
 
-OBJS = $(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
-        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
+OBJS =	$(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
+        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ) \
+		$(OBJS_PRINTF)
 		
 HEADER = libft.h
 
@@ -91,9 +97,10 @@ fclean : clean
 re : fclean all
 
 $(NAME): $(OBJS)
-	$(MAKE) -C printf/ all
-	ar rcs $(NAME) $(PRINTF_OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+objs/%.o: printf/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 objs/%.o: characters/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
