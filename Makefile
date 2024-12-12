@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/11 18:48:26 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/12 10:36:34 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRCS_MISCS			=	$(addprefix miscs/, $(MISCS))
 OBJS_MISCS		 	=	$(patsubst miscs%.c, objs%.o, $(SRCS_MISCS))
 
 
-STRINGS				=	ft_isnumber.c ft_split.c ft_strchr.c ft_strdup.c \
+STRINGS				=	ft_isfloat.c ft_isint.c ft_split.c ft_strchr.c ft_strdup.c \
 						ft_striteri.c ft_strjoin.c ft_strjoin_ip.c \
 						ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 						ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \

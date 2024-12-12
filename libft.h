@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 12:47:36 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/12 10:35:56 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,8 @@ char	*ft_utoa_base(unsigned long number, char *base);
 char	*ft_itoa_base(long long n, char *base);
 char	*ft_strdup_pf(const char *s1, int null);
 // STRINGS
-int		ft_isnumber(char *str);
+int		ft_isfloat(char *str);
+int		ft_isint(char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
