@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/12 10:38:14 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/12 11:22:58 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	ft_isfloat(char *str)
 	is_floatable = 0;
 	if (!str)
 		return (is_floatable);
-	if (ft_strchr(ft_strchr(str, '.'), '.') != NULL)
-		return (is_floatable);
 	int_dec = ft_split(str, '.');
 	if (ft_arrlen(int_dec) == 1)
 	{
@@ -37,5 +35,6 @@ int	ft_isfloat(char *str)
 		ft_free_array((void **)int_dec, 2);
 		return (is_floatable);
 	}
+	ft_free_array((void **)int_dec, ft_arrlen(int_dec));
 	return (is_floatable);
 }
