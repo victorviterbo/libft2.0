@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/12 10:35:56 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:10:25 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ char	*ft_utoa_base(unsigned long number, char *base);
 t_list	*ft_lst_getn(t_list **lst, int n);
 t_list	*ft_lst_isin_int(t_list **lst, int elem);
 t_list	*ft_lst_isin_void(t_list **lst, void *elem, int size);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new_node);
+void	ft_lstadd_front(t_list **lst, t_list *new_node);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstcut(t_list **lst, void (*del)(void *), int start, int end);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
@@ -152,5 +152,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+char	*ft_readfile(int fd);
 
 #endif

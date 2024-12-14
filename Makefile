@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/12 10:36:34 by vviterbo         ###   ########.fr        #
+#    Updated: 2024/12/14 18:10:40 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,8 @@ OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
 
 
 WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
-						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
+						ft_readfile.c
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
