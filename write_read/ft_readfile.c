@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:07:17 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/14 18:10:11 by vviterbo         ###   ########.fr       */
+/*   Updated: 2024/12/22 10:21:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ char	*ft_readfile(int fd)
 
 	if (fd <= 0)
 		return (NULL);
-	byte_read = 1;
-	buffer = ft_calloc(1, sizeof(char));
+	byte_read = BUFFER_SIZE;
+	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	fcontent = ft_calloc(1, sizeof(char));
-	while (byte_read)
+	while (byte_read == BUFFER_SIZE)
 	{
-		byte_read = read(fd, buffer, 1);
+		byte_read = read(fd, buffer, BUFFER_SIZE);
 		fcontent = ft_strjoin_ip(fcontent, buffer, 1);
 	}
+	free(buffer);
 	return (fcontent);
 }
