@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_readfile.c                                      :+:      :+:    :+:   */
+/*   ft_array_append.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 18:07:17 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/04 11:28:47 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/01/04 12:35:52 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/01/04 12:36:23 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_readfile(int fd);
+char	**ft_array_append(char **array, char *str, bool first);
 
-char	*ft_readfile(int fd)
+char	**ft_array_append(char **array, char *str, bool first)
 {
-	int		byte_read;
-	char	*buffer;
-	char	*fcontent;
+	size_t	i;
+	char	**concatenated;
 
-	if (fd <= 0)
-		return (NULL);
-	byte_read = BUFFER_SIZE;
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	fcontent = ft_calloc(1, sizeof(char));
-	while (byte_read == BUFFER_SIZE)
+	concatenated = ft_calloc(ft_arrlen(array) + 2, sizeof(char *));
+	i = 0;
+	if (first)
+		concatenated[0] = str;
+	while (array[i])
 	{
-		byte_read = read(fd, buffer, BUFFER_SIZE);
-		fcontent = ft_strjoin_ip(fcontent, buffer, 1);
+		concatenated[i + first] = array[i];
+		i++;
 	}
-	free(buffer);
-	return (fcontent);
+	if (!first)
+		concatenated[i] = str;
+	concatenated[i + 1] = NULL;
+	free(array);
+	return (concatenated);
 }

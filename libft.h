@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/14 18:10:25 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:36:58 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memset(void *str, int c, size_t len);
 // MISC
+char	**ft_array_append(char **array, char *str, bool first);
 size_t	ft_arrlen(char **array);
 void	ft_dummy(void *ptr);
 void	ft_free_array(void **array, int size);
