@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2024/12/14 18:10:40 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/04 15:47:33 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ OBJS_MEMORY		 	=	$(patsubst memory%.c, objs%.o, $(SRCS_MEMORY))
 
 
 MISCS				=	ft_arrlen.c ft_dummy.c ft_free_array.c ft_parse_as.c \
-						ft_strarray_mapi.c ft_swap_void.c
+						ft_strarray_mapi.c ft_swap_void.c ft_array_append.c
 SRCS_MISCS			=	$(addprefix miscs/, $(MISCS))
 OBJS_MISCS		 	=	$(patsubst miscs%.c, objs%.o, $(SRCS_MISCS))
 
