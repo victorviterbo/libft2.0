@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/04 12:36:58 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/05 17:47:08 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		ft_iswhitespace_eq(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 // CONVERSIONS

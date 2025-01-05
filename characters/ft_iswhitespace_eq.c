@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_iswhitespace_eq.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 07:25:20 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/05 17:54:11 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/01/05 17:44:09 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/01/05 17:46:48 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_isalnum(int c);
+int	ft_iswhitespace_eq(int c);
 
-int	ft_isalnum(int c)
+int	ft_iswhitespace_eq(int c)
 {
-	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')
-		|| ('0' <= c && c <= '9'));
+	return ((9 <= c && c <= 13) || c == 32);
 }

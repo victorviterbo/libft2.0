@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 17:49:54 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 13:27:03 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/05 17:50:51 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ char	*ft_itoa(int n)
 	magnitude = ft_prev_power((double)number, 10.0);
 	while (magnitude)
 	{
-		*(number_str + i) = number / magnitude + '0';
+		number_str[i] = number / magnitude + '0';
 		number %= magnitude;
 		magnitude /= 10;
 		i++;
 	}
-	*(number_str + i) = '\0';
+	number_str[i] = '\0';
 	return (number_str);
 }
 

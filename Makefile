@@ -6,14 +6,15 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/04 15:47:33 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/05 17:47:44 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CHARACTERS			= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
-						ft_isprint.c ft_tolower.c ft_toupper.c
+						ft_isprint.c ft_tolower.c ft_toupper.c \
+						ft_iswhitespace_eq.c
 SRCS_CHARACTERS		=	$(addprefix characters/, $(CHARACTERS))
 OBJS_CHARACTERS 	=	$(patsubst characters%.c, objs%.o, $(SRCS_CHARACTERS))
 

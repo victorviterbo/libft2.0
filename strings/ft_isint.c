@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:32:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/12 11:46:04 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/05 18:04:00 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ int	ft_isint(char *str)
 	if (!str)
 		return (0);
 	isneg = (ft_strchr(str, '-') != NULL);
-	while ((9 <= *(str + i) && *(str + i) <= 13) || *(str + i) == 32)
+	while (ft_iswhitespace_eq(str[0]))
 		str++;
-	if (*(str + i) && (*(str + i) == '+' || *(str + i) == '-'))
+	if (str[0] && (str[0] == '+' || str[0] == '-'))
 		str++;
-	if (!*(str))
+	if (!str[0])
 		return (0);
-	while (*(str) == '0')
+	while (str[0] == '0')
 		str++;
-	while (*(str + i))
+	while (str[i])
 	{
-		if (!ft_strchr("0123456789", *(str + i)))
+		if (!ft_strchr("0123456789", str[i]))
 			return (0);
 		i++;
 	}
