@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/05 17:47:08 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/07 23:27:57 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ char	*ft_utoa_base(unsigned long number, char *base);
 char	*ft_itoa_base(long long n, char *base);
 char	*ft_strdup_pf(const char *s1, int null);
 // STRINGS
+char	*ft_coalesce_char(char *str, char c, bool inplace);
 int		ft_isfloat(char *str);
 int		ft_isint(char *str);
 char	**ft_split(char const *s, char c);
@@ -141,6 +142,7 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strtrim_char(char	*str, char c, bool inplace);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 // WRITE_READ
