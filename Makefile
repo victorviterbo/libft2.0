@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/08 18:35:41 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/09 00:27:00 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,18 +65,12 @@ OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
 
 WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
 						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-						ft_readfile.c
+						ft_readfile.c ft_printf.c
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
-PRINTF				=	ft_conv_utils.c ft_itoa_base.c ft_memutils.c \
-						ft_printf.c ft_strutils.c
-SRCS_PRINTF			=	$(addprefix printf/, $(PRINTF))
-OBJS_PRINTF		 	=	$(patsubst printf%.c, objs%.o, $(SRCS_PRINTF))
-
 OBJS =	$(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
-        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ) \
-		$(OBJS_PRINTF)
+        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
 
 HEADER = libft.h
 

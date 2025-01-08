@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 11:01:06 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 14:14:00 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/08 23:58:05 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		ft_printf(const char *str, ...);
 size_t	print_format(const char **str, va_list argl);
 char	*get_radix(char type, va_list argl);
+char	*ft_strdup_pf(const char *s1, int null);
 
 int	ft_printf(const char *str, ...)
 {
@@ -82,8 +83,8 @@ char	*get_radix(char type, va_list argl)
 	else if (type == 's')
 		radix = ft_strdup_pf(va_arg(argl, char *), 1);
 	else if (type == 'p')
-		radix = ft_strjoin_ip("0x", ft_utoa_base((long)va_arg(argl, void *),
-					"0123456789abcdef"), 2);
+		radix = ft_strjoin_ip("0x", ft_utoa_base((unsigned long)
+					va_arg(argl, void *), "0123456789abcdef"), 2);
 	else if (type == 'd')
 		radix = ft_itoa_base(va_arg(argl, int), "0123456789");
 	else if (type == 'i')
@@ -97,4 +98,19 @@ char	*get_radix(char type, va_list argl)
 	else if (type == '%')
 		radix = ft_ctoa('%');
 	return (radix);
+}
+
+char	*ft_strdup_pf(const char *s1, int null)
+{
+	char	*duplicate;
+
+	if (!s1 && null)
+		return (ft_strdup_pf("(null)", 0));
+	if (!s1)
+		return (NULL);
+	duplicate = ft_calloc(ft_strlen(s1) + 1, sizeof(char));
+	if (!duplicate)
+		return (NULL);
+	ft_memmove(duplicate, s1, ft_strlen(s1) + 1);
+	return (duplicate);
 }
