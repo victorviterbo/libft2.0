@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/09 00:19:48 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:56:56 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ float		ft_atof(char *str);
 char		*ft_ctoa(char c);
 char		*ft_itoa_base(long long n, char *base);
 char		*ft_itoa(int n);
+int			ft_number_len(long long n, int base_size);
 char		*ft_utoa_base(unsigned long number, char *base);
 // LISTS
 t_list		*ft_lst_getn(t_list **lst, int n);
@@ -94,7 +95,6 @@ int			ft_lstsize(t_list *lst);
 double		ft_abs(double n);
 double		ft_dotprod(t_coor v1, t_coor v2);
 t_coor		ft_initvec(double x, double y, double z);
-int			ft_log_base(double n, int base_size);
 double		ft_max(double a, double b);
 double		ft_min(double a, double b);
 double		ft_norm(t_coor vector);

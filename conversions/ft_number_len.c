@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test1.c                                            :+:      :+:    :+:   */
+/*   ft_number_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 18:15:59 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/09 18:41:02 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/12/06 15:42:04 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/01/12 17:00:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int main()
+int	ft_number_len(long long n, int base_size);
+
+int	ft_number_len(long long n, int base_size)
 {
-	
+	int	size;
+
+	size = (n < 0);
+	if (n < 0)
+		n *= -1;
+	if (base_size < 2)
+		return (0);
+	if (!n)
+		return (1);
+	while (n > 0)
+	{
+		size++;
+		n /= base_size;
+	}
+	return (size);
 }

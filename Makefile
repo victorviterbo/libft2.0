@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/09 18:03:11 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/12 16:55:21 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS_CHARACTERS 	=	$(patsubst characters%.c, objs%.o, $(SRCS_CHARACTERS))
 
 
 CONVERSIONS			=	ft_atof.c ft_atoi.c ft_ctoa.c ft_itoa.c ft_itoa_base.c \
-						ft_utoa_base.c
+						ft_utoa_base.c ft_number_len.c
 SRCS_CONVERSIONS	=	$(addprefix conversions/, $(CONVERSIONS))
 OBJS_CONVERSIONS 	=	$(patsubst conversions%.c, objs%.o, $(SRCS_CONVERSIONS))
 
@@ -35,7 +35,7 @@ SRCS_LISTS			=	$(addprefix lists/, $(LISTS))
 OBJS_LISTS		 	=	$(patsubst lists%.c, objs%.o, $(SRCS_LISTS))
 
 
-MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c ft_log_base.c \
+MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c \
 						ft_max.c ft_min.c ft_norm.c ft_prev_power.c \
 						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c
 SRCS_MATH			=	$(MATH:%=math/%)
@@ -87,6 +87,8 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+bonus : re
 
 objs_folder :
 	@mkdir -p objs/

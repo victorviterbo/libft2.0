@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 15:28:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/09 00:24:28 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:55:55 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_itoa_base(long long n, char *base)
 	if (ft_strlen(base) < 2)
 		return (NULL);
 	number = n;
-	number_str = ft_calloc((ft_log_base(number, ft_strlen(base)) + 2),
+	number_str = ft_calloc((ft_number_len(number, ft_strlen(base)) + 2),
 			sizeof(char));
 	if (!number_str)
 		return (NULL);
