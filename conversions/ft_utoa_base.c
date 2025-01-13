@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:00:36 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/05 17:51:12 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:58:26 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char			*ft_utoa_base(unsigned long number, char *base);
 static size_t	ft_ulog_base(unsigned long n, int base_size);
+static size_t	ft_uprev_power(size_t n, size_t base_size);
 
 char	*ft_utoa_base(unsigned long number, char *base)
 {
@@ -21,12 +22,14 @@ char	*ft_utoa_base(unsigned long number, char *base)
 	size_t	magnitude;
 	size_t	i;
 
+	if (ft_strlen(base) < 2)
+		return (NULL);
 	i = 0;
 	number_str = ft_calloc((ft_ulog_base(number, ft_strlen(base)) + 2),
 			sizeof(char));
 	if (!number_str)
 		return (NULL);
-	magnitude = ft_prev_power(number, ft_strlen(base));
+	magnitude = ft_uprev_power(number, ft_strlen(base));
 	while (magnitude)
 	{
 		number_str[i] = *(base + number / magnitude);
@@ -53,4 +56,17 @@ static size_t	ft_ulog_base(unsigned long n, int base_size)
 		n /= base_size;
 	}
 	return (size);
+}
+
+static size_t	ft_uprev_power(size_t n, size_t base_size)
+{
+	unsigned long long	log;
+
+	log = 1;
+	while (n >= base_size)
+	{
+		log *= base_size;
+		n /= base_size;
+	}
+	return (log);
 }
