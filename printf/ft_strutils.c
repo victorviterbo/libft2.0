@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strutils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/04 00:01:02 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 14:48:31 by vviterbo         ###   ########.fr       */
+/*   Created: 2024/08/15 11:34:17 by vviterbo          #+#    #+#             */
+/*   Updated: 2024/12/10 13:03:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_putnbr_fd(int n, int fd);
+char	*ft_strdup_pf(const char *s1, int null);
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strdup_pf(const char *s1, int null)
 {
-	char	*number_str;
+	char	*duplicate;
 
-	number_str = ft_itoa(n);
-	if (!number_str)
-		return ;
-	write(fd, number_str, ft_strlen(number_str));
-	return ;
+	if (!s1 && null)
+		return (ft_strdup_pf("(null)", 0));
+	if (!s1)
+		return (NULL);
+	duplicate = ft_calloc(ft_strlen(s1) + 1, sizeof(char));
+	if (!duplicate)
+		return (NULL);
+	ft_memmove(duplicate, s1, ft_strlen(s1) + 1);
+	return (duplicate);
 }

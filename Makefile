@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/12 16:55:21 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/12 17:27:28 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS_CHARACTERS 	=	$(patsubst characters%.c, objs%.o, $(SRCS_CHARACTERS))
 
 
 CONVERSIONS			=	ft_atof.c ft_atoi.c ft_ctoa.c ft_itoa.c ft_itoa_base.c \
-						ft_utoa_base.c ft_number_len.c
+						ft_utoa_base.c
 SRCS_CONVERSIONS	=	$(addprefix conversions/, $(CONVERSIONS))
 OBJS_CONVERSIONS 	=	$(patsubst conversions%.c, objs%.o, $(SRCS_CONVERSIONS))
 
@@ -30,12 +30,12 @@ LISTS				=	ft_lst_getn.c ft_lst_isin_int.c ft_lst_isin_void.c \
 						ft_lstcut.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
 						ft_lstmap_void.c ft_lstmax.c ft_lstmaxi.c ft_lstmin.c \
 						ft_lstmini.c ft_lstnew_int.c ft_lstnew_void.c \
-						ft_lstsize.c
+						ft_lstsize.c 
 SRCS_LISTS			=	$(addprefix lists/, $(LISTS))
 OBJS_LISTS		 	=	$(patsubst lists%.c, objs%.o, $(SRCS_LISTS))
 
 
-MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c \
+MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c ft_log_base.c \
 						ft_max.c ft_min.c ft_norm.c ft_prev_power.c \
 						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c
 SRCS_MATH			=	$(MATH:%=math/%)
@@ -65,12 +65,18 @@ OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
 
 WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
 						ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-						ft_readfile.c ft_printf.c
+						ft_readfile.c
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
 
+PRINTF				=	ft_conv_utils.c ft_itoa_base.c ft_memutils.c \
+						ft_printf.c ft_strutils.c
+SRCS_PRINTF			=	$(addprefix printf/, $(PRINTF))
+OBJS_PRINTF		 	=	$(patsubst printf%.c, objs%.o, $(SRCS_PRINTF))
+
 OBJS =	$(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
-        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
+        $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ) \
+		$(OBJS_PRINTF)
 
 HEADER = libft.h
 
@@ -87,8 +93,6 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
-
-bonus : re
 
 objs_folder :
 	@mkdir -p objs/
