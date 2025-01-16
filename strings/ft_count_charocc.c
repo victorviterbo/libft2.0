@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test1.c                                            :+:      :+:    :+:   */
+/*   ft_count_charocc.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 18:15:59 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/09 18:41:02 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/01/16 17:01:49 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/01/16 17:08:25 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int main()
+int	ft_count_charocc(char *str, char c);
+
+int	ft_count_charocc(char *str, char c)
 {
-	
+	int	count;
+	int	i;
+
+	i = 0;
+	count = 0;
+	if (!str)
+		return (-1);
+	while (str[i])
+	{
+		if (str[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
 }
