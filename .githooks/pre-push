@@ -30,12 +30,19 @@ fi
 
 cd tests/
 
-cc -Wall -Wextra -Werror -fsanitize=address *.c ../characters/*.c ../conversions/*.c ../lists/*.c  ../math/*.c ../memory/*.c ../miscs/*.c ../strings/*.c ../write_read/*.c -o runtest; ./runtest
+cc -L../ -lft *.c -o runtest; 
 
 ./runtest
 
 if [ "$?" -ne 0 ]; then
 	echo "Tests failed, git push aborted !"
+	exit 1
+fi
+
+leaks --atExit -- ./runtest
+
+if [ "$?" -ne 0 ]; then
+	echo "Tests failed : leaks found, git push aborted !"
 	exit 1
 fi
 

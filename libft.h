@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/12 16:56:56 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:17:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ char		**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 void		ft_swap_void(void **ptr1, void **ptr2);
 // STRINGS
 char		*ft_coalesce_char(char *str, char c, bool inplace);
+int			ft_count_charocc(char *str, char c);
+int			ft_count_strocc(char *str, char *to_count, bool distinct);
 int			ft_isfloat(char *str);
 int			ft_isint(char *str);
 char		**ft_split(char const *s, char c);
