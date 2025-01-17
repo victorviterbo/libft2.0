@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/16 19:21:24 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/17 15:14:42 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ STRINGS				=	ft_isfloat.c ft_isint.c ft_split.c ft_strchr.c ft_strdup.c \
 						ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 						ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 						ft_substr.c ft_coalesce_char.c ft_strtrim_char.c \
-						ft_count_charocc.c ft_count_strocc.c
+						ft_count_charocc.c ft_count_strocc.c ft_str_replace.c
 SRCS_STRINGS		=	$(addprefix strings/, $(STRINGS))
 OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
 
@@ -69,6 +69,9 @@ WRITE_READ			=	ft_get_next_line.c ft_putchar_fd.c \
 						ft_readfile.c ft_printf.c
 SRCS_WRITE_READ		=	$(addprefix write_read/, $(WRITE_READ))
 OBJS_WRITE_READ 	=	$(patsubst write_read%.c, objs%.o, $(SRCS_WRITE_READ))
+
+SRCS =	$(SRCS_CHARACTERS) $(SRCS_CONVERSIONS) $(SRCS_LISTS) $(SRCS_MATH) \
+		$(SRCS_MEMORY) $(SRCS_MISCS) $(SRCS_STRINGS) $(SRCS_WRITE_READ)
 
 OBJS =	$(OBJS_CHARACTERS) $(OBJS_CONVERSIONS) $(OBJS_LISTS) $(OBJS_MATH) \
         $(OBJS_MEMORY) $(OBJS_MISCS) $(OBJS_STRINGS) $(OBJS_WRITE_READ)
@@ -89,7 +92,10 @@ fclean : clean
 
 re : fclean all
 
-bonus : re
+bonus : all
+
+print_srcs:
+	@echo $(SRCS)
 
 objs_folder :
 	@mkdir -p objs/
