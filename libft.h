@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/17 12:38:28 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/20 22:29:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 # ifndef FD_MAX
 #  define FD_MAX 1024
 # endif
+
+# define NOFREE 0
+# define FREE_S1 1
+# define FREE_S2 2
+# define FREE_S1S2 3
 
 # include <stddef.h>
 # include <limits.h>
