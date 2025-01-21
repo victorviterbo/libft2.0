@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/20 22:29:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:11:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ int			ft_count_charocc(char *str, char c);
 int			ft_count_strocc(char *str, char *to_count, bool distinct);
 int			ft_isfloat(char *str);
 int			ft_isint(char *str);
+void		ft_print_array(char **arr, bool nl);
 char		**ft_split(char const *s, char c);
 char		*ft_str_replace(char *str, char *to_repl, char *repl_w);
 char		*ft_strchr(const char *s, int c);
