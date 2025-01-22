@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/21 14:11:32 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/22 16:15:52 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ OBJS_MEMORY		 	=	$(patsubst memory%.c, objs%.o, $(SRCS_MEMORY))
 
 
 MISCS				=	ft_arrlen.c ft_dummy.c ft_free_array.c ft_parse_as.c \
-						ft_strarray_mapi.c ft_swap_void.c ft_array_append.c
+						ft_strarray_mapi.c ft_swap_void.c ft_array_append.c \
+						ft_print_array.c
 SRCS_MISCS			=	$(addprefix miscs/, $(MISCS))
 OBJS_MISCS		 	=	$(patsubst miscs%.c, objs%.o, $(SRCS_MISCS))
 
@@ -60,7 +61,6 @@ STRINGS				=	ft_isfloat.c ft_isint.c ft_split.c ft_strchr.c \
 						ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 						ft_substr.c ft_coalesce_char.c ft_strtrim_char.c \
 						ft_count_charocc.c ft_count_strocc.c ft_str_replace.c \
-						ft_print_array.c
 SRCS_STRINGS		=	$(addprefix strings/, $(STRINGS))
 OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
 

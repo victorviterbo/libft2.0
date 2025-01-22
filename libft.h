@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/21 14:11:17 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:22:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ size_t		ft_arrlen(char **array);
 void		ft_dummy(void *ptr);
 void		ft_free_array(void **array, int size);
 double		ft_parse_as(void *ptr, int dtype);
+void		ft_print_array(char **arr, bool nl);
 char		**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 void		ft_swap_void(void **ptr1, void **ptr2);
 // STRINGS
@@ -130,7 +131,6 @@ int			ft_count_charocc(char *str, char c);
 int			ft_count_strocc(char *str, char *to_count, bool distinct);
 int			ft_isfloat(char *str);
 int			ft_isint(char *str);
-void		ft_print_array(char **arr, bool nl);
 char		**ft_split(char const *s, char c);
 char		*ft_str_replace(char *str, char *to_repl, char *repl_w);
 char		*ft_strchr(const char *s, int c);
