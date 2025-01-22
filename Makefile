@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/22 16:15:52 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/22 17:33:02 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ OBJS_LISTS		 	=	$(patsubst lists%.c, objs%.o, $(SRCS_LISTS))
 MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c \
 						ft_max.c ft_min.c ft_norm.c ft_prev_power.c \
 						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c
-SRCS_MATH			=	$(MATH:%=math/%)
-OBJS_MATH		 	=	$(SRCS_MATH:math/%.c=objs/%.o)
+SRCS_MATH			=	$(addprefix math/, $(MATH))
+OBJS_MATH		 	=	$(patsubst math%.c, objs%.o, $(SRCS_MATH))
 
 
 MEMORY				=	ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c \
@@ -60,7 +60,7 @@ STRINGS				=	ft_isfloat.c ft_isint.c ft_split.c ft_strchr.c \
 						ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 						ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 						ft_substr.c ft_coalesce_char.c ft_strtrim_char.c \
-						ft_count_charocc.c ft_count_strocc.c ft_str_replace.c \
+						ft_count_charocc.c ft_count_strocc.c ft_str_replace.c
 SRCS_STRINGS		=	$(addprefix strings/, $(STRINGS))
 OBJS_STRINGS	 	=	$(patsubst strings%.c, objs%.o, $(SRCS_STRINGS))
 
@@ -96,7 +96,7 @@ re : fclean all
 bonus : all
 
 print_srcs:
-	@echo $(SRCS)
+	echo $(STRINGS)
 
 objs_folder :
 	@mkdir -p objs/
