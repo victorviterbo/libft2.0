@@ -30,7 +30,7 @@ fi
 
 cd tests/
 
-cc -L../ -lft *.c -o runtest; 
+make
 
 ./runtest
 
