@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 12:37:16 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/27 14:19:11 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/01/27 14:09:49 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/01/27 14:18:05 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_strcmp(const char *s1, const char *s2);
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t			i;
-	unsigned char	*ucs1;
-	unsigned char	*ucs2;
-
 	if (!s1 && !s2)
 		return (0);
 	if (!s1 || !s2)
 		return (1);
-	i = 0;
-	ucs1 = (unsigned char *)s1;
-	ucs2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while (*(s1 + i) && *(s2 + i) && i < n - 1)
-	{
-		if (*(s1 + i) != *(s2 + i))
-			return ((*(ucs1 + i) > *(ucs2 + i)) - (*(ucs1 + i) < *(ucs2 + i)));
-		i++;
-	}
-	return ((*(ucs1 + i) > *(ucs2 + i)) - (*(ucs1 + i) < *(ucs2 + i)));
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (1);
+	return (ft_strncmp(s1, s2, ft_strlen(s1)));
 }

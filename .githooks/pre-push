@@ -32,6 +32,11 @@ cd tests/
 
 make
 
+if [ "$?" -ne 0 ]; then
+	echo "Tests cannot compile, git push aborted !"
+	exit 1
+fi
+
 ./runtest
 
 if [ "$?" -ne 0 ]; then

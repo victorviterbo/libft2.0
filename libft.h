@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/22 16:23:07 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:11:59 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ int			ft_isint(char *str);
 char		**ft_split(char const *s, char c);
 char		*ft_str_replace(char *str, char *to_repl, char *repl_w);
 char		*ft_strchr(const char *s, int c);
+int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdup(const char *s1);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *s));
 char		*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
