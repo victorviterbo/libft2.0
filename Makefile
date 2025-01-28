@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/01/28 20:36:20 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/01/28 20:37:56 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,24 +87,23 @@ CC = cc
 all: $(NAME)
 
 clean :
-	rm -f objs/*.o
+	@rm -f objs/*.o
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 
 bonus : all
 
 print_srcs:
-	echo $(SRCS)
+	@echo $(SRCS)
 
 objs_folder :
 	@mkdir -p objs/
 
 $(NAME): objs_folder $(OBJS)
-	@echo "Compiling Libft..."
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 	@echo "Libft compiled successfully"
 
 objs/%.o: characters/%.c
