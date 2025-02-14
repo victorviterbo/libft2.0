@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 00:01:02 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/09 18:06:27 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd);
 

@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:47:56 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/09 00:15:08 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 double	ft_prev_power(double n, int base_size);
 

@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 20:34:10 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/14 17:51:25 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char		*ft_coalesce_char(char *str, char c, bool inplace);
 static char	**init(char *str, char c, char **coalesc, char **cstr);

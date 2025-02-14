@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:00:36 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/12 16:58:26 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char			*ft_utoa_base(unsigned long number, char *base);
 static size_t	ft_ulog_base(unsigned long n, int base_size);

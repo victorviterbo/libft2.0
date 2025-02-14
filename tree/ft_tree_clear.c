@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_tree_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 14:32:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/02/14 20:34:20 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/02/14 20:39:35 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_tree_clear(t_tree *tree, void (*del)(void *));
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_tree_clear(t_tree *node, void (*del)(void *))
 {
-	if (!lst)
-		return ;
-	if (lst->content)
-		del(lst->content);
-	free(lst);
+	if (node->left)
+		ft_tree_clear(node->left, del);
+	if (node->right)
+		ft_tree_clear(node->left, del);
+	del(node->content);
+	free(node);
 	return ;
 }

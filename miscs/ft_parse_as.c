@@ -6,15 +6,15 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:26:25 by vviterbo          #+#    #+#             */
-/*   Updated: 2024/12/10 10:19:29 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:19:46 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-double	ft_parse_as(void *ptr, int dtype);
+double	ft_parse_as(void *ptr, t_Datatype dtype);
 
-double	ft_parse_as(void *ptr, int dtype)
+double	ft_parse_as(void *ptr, t_Datatype dtype)
 {
 	double	val;
 

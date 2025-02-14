@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/14 14:10:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:40:05 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,27 @@
 # include <stdbool.h>
 # include <stdarg.h>
 
-enum e_INPLACE_TYPE {
+typedef enum e_Inplace_Type {
 	NOFREE,
 	FREE_S1,
 	FREE_S2,
 	FREE_S1S2
-};
+}	t_Inplace_Type;
 
-enum e_Datatype {
+typedef enum e_Tree_Travel_Type {
+	PRE_ORDER,
+	IN_ORDER,
+	POST_ORDER
+}	t_Tree_Travel_Type;
+
+typedef enum e_Datatype {
 	SHORT,
 	INT,
 	FLOAT,
 	DOUBLE,
 	BOOL,
 	CHAR
-};
+}	t_Datatype;
 
 typedef struct s_coor {
 	double	x;
@@ -60,6 +66,14 @@ typedef struct s_list
 	};
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_tree
+{
+	void			*content;
+	struct s_tree	*parent;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}	t_tree;
 
 // CHARACTERS
 int			ft_isalnum(int c);
@@ -123,7 +137,7 @@ char		**ft_array_append(char **array, char *str, bool first);
 size_t		ft_arrlen(char **array);
 void		ft_dummy(void *ptr);
 void		ft_free_array(void **array, int size);
-double		ft_parse_as(void *ptr, int dtype);
+double		ft_parse_as(void *ptr, t_Datatype dtype);
 void		ft_print_array(char **arr, bool nl);
 char		**ft_strarray_mapi(char **strarray, char *(*f)(const char *));
 void		ft_swap_void(void **ptr1, void **ptr2);
@@ -139,7 +153,8 @@ char		*ft_strchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdup(const char *s1);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *s));
-char		*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
+char		*ft_strjoin_ip(char const *s1, char const *s2,
+				t_Inplace_Type in_place);
 char		*ft_strjoin(char const *s1, char const *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -151,6 +166,11 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim_char(char	*str, char c, bool inplace);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+// TREE
+void		ft_tree_clear(t_tree *tree, void (*del)(void *));
+t_tree		*ft_tree_new(void *content);
+void		ft_tree_trav(t_tree *node, void(*f)(void *),
+				t_Tree_Travel_Type trav_type);
 // WRITE_READ
 char		*ft_get_next_line(int fd);
 int			ft_printf(const char *str, ...);

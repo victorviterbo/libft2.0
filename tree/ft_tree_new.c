@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_new_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 14:32:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/02/14 17:56:36 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/02/14 18:28:57 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+t_tree	*ft_tree_new(void *content);
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_tree	*ft_tree_new(void *content)
 {
-	if (!lst)
-		return ;
-	if (lst->content)
-		del(lst->content);
-	free(lst);
-	return ;
+	t_tree	*newtree;
+
+	newtree = ft_calloc(1, sizeof(t_tree));
+	if (!newtree)
+		return (NULL);
+	newtree->content = content;
+	newtree->parent = NULL;
+	newtree->left = NULL;
+	newtree->right = NULL;
+	return (newtree);
 }

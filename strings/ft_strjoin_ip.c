@@ -6,15 +6,15 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:14:52 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/20 21:51:32 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:21:03 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-char	*ft_strjoin_ip(char const *s1, char const *s2, int in_place);
+char	*ft_strjoin_ip(char const *s1, char const *s2, t_Inplace_Type in_place);
 
-char	*ft_strjoin_ip(char const *s1, char const *s2, int in_place)
+char	*ft_strjoin_ip(char const *s1, char const *s2, t_Inplace_Type in_place)
 {
 	char	*joined;
 

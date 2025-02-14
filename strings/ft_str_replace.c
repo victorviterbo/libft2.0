@@ -6,11 +6,11 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 19:28:17 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/17 15:37:25 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:59:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char		*ft_str_replace(char *str, char *to_repl, char *repl_w);
 static char	*init(char *str, char *to_repl, char *repl_w, size_t *newsize);
