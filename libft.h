@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/01/27 14:30:07 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/14 14:10:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@
 #  define FD_MAX 1024
 # endif
 
-# define NOFREE 0
-# define FREE_S1 1
-# define FREE_S2 2
-# define FREE_S1S2 3
-
 # include <stddef.h>
 # include <limits.h>
 # include <stdlib.h>
@@ -33,6 +28,13 @@
 # include <float.h>
 # include <stdbool.h>
 # include <stdarg.h>
+
+enum e_INPLACE_TYPE {
+	NOFREE,
+	FREE_S1,
+	FREE_S2,
+	FREE_S1S2
+};
 
 enum e_Datatype {
 	SHORT,
