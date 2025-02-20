@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/02/14 20:39:54 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/02/20 19:02:06 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ OBJS_LISTS		 	=	$(patsubst lists/%.c, objs/%.o, $(SRCS_LISTS))
 
 MATH				=	ft_abs.c ft_dotprod.c ft_initvec.c \
 						ft_max.c ft_min.c ft_norm.c ft_prev_power.c \
-						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c
+						ft_vecadd.c ft_vecscale.c ft_vecsubstr.c ft_range.c
 SRCS_MATH			=	$(addprefix math/, $(MATH))
 OBJS_MATH		 	=	$(patsubst math/%.c, objs/%.o, $(SRCS_MATH))
 

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/16 16:35:30 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:01:49 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ double		ft_max(double a, double b);
 double		ft_min(double a, double b);
 double		ft_norm(t_coor vector);
 double		ft_prev_power(double n, int base_size);
+int			*ft_range(int min, int max);
 t_coor		ft_vecadd(t_coor v1, t_coor v2);
 t_coor		ft_vecscale(t_coor base, t_coor tip, float scale);
 t_coor		vec_substr(t_coor v1, t_coor v2);
