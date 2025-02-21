@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/20 19:01:49 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:59:39 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ double		ft_lstmin(t_list **lst, int dtype);
 int			ft_lstmini(t_list **lst);
 t_list		*ft_lstnew_int(int i);
 t_list		*ft_lstnew_void(void *content);
+void		ft_lstpop(t_list **lst, t_list *node, void (*del)(void *));
 int			ft_lstsize(t_list *lst);
 // MATH
 double		ft_abs(double n);

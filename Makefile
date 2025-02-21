@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/02/20 19:02:06 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/02/21 13:00:22 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ LISTS				=	ft_lst_getn.c ft_lst_isin_int.c ft_lst_isin_void.c \
 						ft_lstcut.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
 						ft_lstmap_void.c ft_lstmax.c ft_lstmaxi.c ft_lstmin.c \
 						ft_lstmini.c ft_lstnew_int.c ft_lstnew_void.c \
-						ft_lstsize.c
+						ft_lstsize.c ft_lstpop.c
 SRCS_LISTS			=	$(addprefix lists/, $(LISTS))
 OBJS_LISTS		 	=	$(patsubst lists/%.c, objs/%.o, $(SRCS_LISTS))
 
