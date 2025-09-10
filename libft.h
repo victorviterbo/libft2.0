@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/02/21 12:59:39 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/09/10 16:04:53 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,23 @@
 # include <stdbool.h>
 # include <stdarg.h>
 
-typedef enum e_Inplace_Type {
+typedef enum e_Inplace_Type
+{
 	NOFREE,
 	FREE_S1,
 	FREE_S2,
 	FREE_S1S2
 }	t_Inplace_Type;
 
-typedef enum e_Tree_Travel_Type {
+typedef enum e_Tree_Travel_Type
+{
 	PRE_ORDER,
 	IN_ORDER,
 	POST_ORDER
 }	t_Tree_Travel_Type;
 
-typedef enum e_Datatype {
+typedef enum e_Datatype
+{
 	SHORT,
 	INT,
 	FLOAT,
@@ -51,7 +54,8 @@ typedef enum e_Datatype {
 	CHAR
 }	t_Datatype;
 
-typedef struct s_coor {
+typedef struct s_coor
+{
 	double	x;
 	double	y;
 	double	z;
