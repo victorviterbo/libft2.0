@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
+#    By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/02/21 13:00:22 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/09/10 13:21:14 by victorviter      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,7 +105,7 @@ objs_folder :
 
 $(NAME): objs_folder $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "Libft compiled successfully"
+	@echo "$(NAME) compiled successfully"
 
 objs/%.o: characters/%.c
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
