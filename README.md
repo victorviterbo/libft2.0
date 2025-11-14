@@ -72,11 +72,11 @@ libft2.0/
 
 ```t_list *ft_lstmap_void(t_list *lst, void *(*f)(void *), void (*del)(void *))``` - Maps function over list
 
-```double ft_lstmax(t_list **lst, int dtype)``` - Returns max value in list of dtype among the following [SHORT, INT, FLOAT, DOUBLE, BOOL, CHAR]
+```double ft_lstmax(t_list **lst, int dtype)``` - Returns max value in list, for dtype see section Structure
 
 ```int ft_lstmaxi(t_list **lst)``` - Returns max value in a list of ints
 
-```double ft_lstmin(t_list **lst, int dtype)``` - Returns min value in list of dtype among the following [SHORT, INT, FLOAT, DOUBLE, BOOL, CHAR]
+```double ft_lstmin(t_list **lst, int dtype)``` - Returns min value in list, for dtype see section Structure
 
 ```int ft_lstmini(t_list **lst)``` - Returns min value in a list of ints
 
@@ -127,7 +127,7 @@ libft2.0/
 ```void *ft_memset(void *str, int c, size_t len)``` - Sets memory region to value
 
 ## 🛠️ Miscellaneous
-```char **ft_array_append(char **array, char *str, bool first)``` - Appends string to array (if first=true, the element is added at the beggining of the array)
+```char **ft_array_append(char **array, char *str, bool first)``` - Appends string to array (if ```first=true```, the element is added at the beggining of the array)
 
 ```size_t ft_arrlen(char **array)``` - Returns length of string array
 
@@ -137,18 +137,18 @@ libft2.0/
 
 ```double ft_parse_as(void *ptr, t_Datatype dtype)``` - Parses pointer as specified datatype
 
-```void ft_print_array(char **arr, bool nl)``` - Prints string array (if nl=true, a ```\n``` is printed in between each element)
+```void ft_print_array(char **arr, bool nl)``` - Prints string array (if ```nl=true```, a ```\n``` is printed in between each element)
 
 ```char **ft_strarray_mapi(char **strarray, char *(*f)(const char *))``` - Maps function over string array
 
 ```void ft_swap_void(void **ptr1, void **ptr2)``` - Swaps two void pointers
 
 ## 📝 Strings
-```char *ft_coalesce_char(char *str, char c, bool inplace)``` - Coalesces consecutive identical characters (```ft_coalesce_char("aaaabcc122233") = "abc123"```)
+```char *ft_coalesce_char(char *str, char c, bool inplace)``` - Coalesces consecutive identical characters (```ft_coalesce_char("aaaabcc122233") = "abc123"```), for inplace see section Structures
 
 ```int ft_count_charocc(char *str, char c)``` - Counts character occurrences
 
-```int ft_count_strocc(char *str, char *to_count, bool distinct)``` - Counts substring occurrences (if distinct=true, overlapping of matches is not allowed)
+```int ft_count_strocc(char *str, char *to_count, bool distinct)``` - Counts substring occurrences (if ```distinct=true```, overlapping of matches is not allowed)
 
 ```int ft_isfloat(char *str)``` - Checks if string is valid float
 
@@ -184,18 +184,18 @@ libft2.0/
 
 ```char *ft_strrchr(const char *s, int c)``` - Finds last occurrence of character
 
-```char *ft_strtrim_char(char *str, char c, bool inplace)``` - Trims character from string
+```char *ft_strtrim_char(char *str, char c, bool inplace)``` - Remove all occurences of the characters c from both extremities of the string, for inplace see details below
 
-```char *ft_strtrim(char const *s1, char const *set)``` - Trims characters from both ends
+```char *ft_strtrim(char const *s1, char const *set)``` - Remove all occurences of any of the characters contained in set from both extremities of the string
 
-```char *ft_substr(char const *s, unsigned int start, size_t len)``` - Extracts substring
+```char *ft_substr(char const *s, unsigned int start, size_t len)``` - Returns a new string containing the substring starting a ```start``` and of size ```len```
 
 ## 🌳 Tree Data Structure
 ```void ft_tree_clear(t_tree *tree, void (*del)(void *))``` - Clears entire tree
 
 ```t_tree *ft_tree_new(void *content)``` - Creates new tree node
 
-```void ft_tree_trav(t_tree *tree, void (*f)(void *), t_Tree_Travel_Type trav_type)``` - Traverses tree in specified order
+```void ft_tree_trav(t_tree *tree, void (*f)(void *), t_Tree_Travel_Type trav_type)``` - Traverses tree in specified order, see Structures
 
 ## 📖 Write/Read (I/O)
 ```char *ft_get_next_line(int fd)``` - Reads next line from file descriptor
@@ -210,7 +210,80 @@ libft2.0/
 
 ```void ft_putstr_fd(char *s, int fd)``` - Outputs string to file descriptor
 
-```char *ft_readfile(int fd)``` - Reads entire file into string
+```char *ft_readfile(int fd)``` - Reads entire file and return it's content as a string
+
+# Structures
+
+## Inplace
+```c
+typedef enum e_Inplace_Type
+{
+	NOFREE,
+	FREE_S1,
+	FREE_S2,
+	FREE_S1S2
+}	t_Inplace_Type;
+```
+This flag is used for certain string operations to specify if a string argument should be freed during the operation and if yes which one. This allow operations like :
+```c
+string1 = ft_strjoin_ip(string1, " adding text to string1", FREE_S1);
+```
+without the risk of memory leaks
+
+## Tree traversal
+```c
+typedef enum e_Tree_Travel_Type
+{
+	PRE_ORDER,
+	IN_ORDER,
+	POST_ORDER
+}	t_Tree_Travel_Type;
+```
+This flag is used to specify in which order should the tree traversal should be performed.
+<p align="center">
+<img width="480" height="409" alt="image" src="https://github.com/user-attachments/assets/7a5446c1-2ce1-4652-bd8d-0725768a3b00" />
+
+*the order in which the black line touches the circles indicate the order, red = PRE-ORDER, green=IN_ORDER, blue=POST_ORDER*
+
+</p>
+
+## Data Types
+```c
+typedef enum e_Datatype
+{
+	SHORT,
+	INT,
+	FLOAT,
+	DOUBLE,
+}	t_Datatype;
+```
+This flag is used for lists of void* to specify the content to be expected
+
+typedef struct s_coor
+{
+	double	x;
+	double	y;
+	double	z;
+}	t_coor;
+
+typedef struct s_list
+{
+	union
+	{
+		void	*content;
+		int		i;
+	};
+	struct s_list	*next;
+}	t_list;
+
+typedef struct s_tree
+{
+	void			*content;
+	struct s_tree	*parent;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}	t_tree;
+ of dtype among the following ```[SHORT, INT, FLOAT, DOUBLE, BOOL, CHAR]```
 
 # 🚀 Usage
 
@@ -228,10 +301,10 @@ int main(void)
     char *str = ft_strdup("Hello World");
     ft_printf("%s\n", str);
     free(str);
-}
-```
     return (0);
 }
+```
+
 Linking
-bash
+```bash
 gcc your_program.c -L. -lft
