@@ -1,5 +1,6 @@
 Libft 2.0 - Enhanced C Library
-The second, enhanced iteration of my personal standard C library. This expanded version includes not only the standard libc functions but also a comprehensive collection of utility functions for linked lists, memory allocation, string manipulation, mathematical operations, and data structures.
+
+The second, enhanced iteration of my personal standard C library. This expanded version includes not only the required functions for the project (see pdf) but also a comprehensive collection of utility functions for linked lists, memory allocation, string manipulation, mathematical operations, and data structures.
 
 # 📁 Project Structure
 
@@ -49,7 +50,7 @@ libft2.0/
 
 ```char *ft_utoa_base(unsigned long number, char *base)``` - Converts unsigned to string with base
 
-## 📋 Lists (Linked Lists)
+## 🔗 Lists (Linked Lists)
 ```t_list *ft_lst_getn(t_list **lst, int n)``` - Gets node at position n
 
 ```t_list *ft_lst_isin_int(t_list **lst, int elem)``` - Checks if int exists in a list of int
@@ -212,9 +213,9 @@ libft2.0/
 
 ```char *ft_readfile(int fd)``` - Reads entire file and return it's content as a string
 
-# Structures
+# ⚙️ Enumerations & Structures
 
-## Inplace
+## 🔄 Inplace
 
 ```c
 typedef enum e_Inplace_Type
@@ -231,7 +232,20 @@ string1 = ft_strjoin_ip(string1, " adding text to string1", FREE_S1);
 ```
 without the risk of memory leaks
 
-## Tree traversal
+## 🗂️ Data Types
+
+```c
+typedef enum e_Datatype
+{
+	SHORT,
+	INT,
+	FLOAT,
+	DOUBLE,
+}	t_Datatype;
+```
+This flag is used for lists of void* to specify the content to be expected
+
+## 🌳 Tree traversal
 
 ```c
 typedef enum e_Tree_Travel_Type
@@ -249,20 +263,18 @@ This flag is used to specify in which order should the tree traversal should be 
 
 </p>
 
-## Data Types
+##  🌳 Tree
 
 ```c
-typedef enum e_Datatype
+typedef struct s_tree
 {
-	SHORT,
-	INT,
-	FLOAT,
-	DOUBLE,
-}	t_Datatype;
+	void			*content;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}	t_tree;
 ```
-This flag is used for lists of void* to specify the content to be expected
 
-## Coordinates
+## 📍 Coordinates
 
 ```c
 typedef struct s_coor
@@ -274,7 +286,7 @@ typedef struct s_coor
 ```
 Implementation of the structure used for vector operations
 
-## List
+## 🔗 List
 
 ```c
 typedef struct s_list
@@ -289,16 +301,6 @@ typedef struct s_list
 ```
 Implementation of the structure used for lists
 
-## Tree
-
-```c
-typedef struct s_tree
-{
-	void			*content;
-	struct s_tree	*left;
-	struct s_tree	*right;
-}	t_tree;
-```
 Implementation of the tree structure
 
 # 🚀 Usage
