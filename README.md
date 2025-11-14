@@ -164,7 +164,7 @@ libft2.0/
 
 ```char *ft_strdup(const char *s1)``` - Duplicates string
 
-```void ft_striteri(char *s, void (*f)(unsigned int, char *))``` - Iterates function over string with index
+```void ft_striteri(char *s, void (*f)(unsigned int, char *))``` - Iterates function f over string passing each character to the function along with it's index
 
 ```char *ft_strjoin_ip(char const *s1, char const *s2, t_Inplace_Type in_place)``` - Joins strings with memory management
 
@@ -180,9 +180,9 @@ libft2.0/
 
 ```int ft_strncmp(const char *s1, const char *s2, size_t n)``` - Compares strings up to n characters
 
-```char *ft_strnstr(const char *haystack, const char *needle, size_t len)``` - Finds substring in string with length limit
+```char *ft_strnstr(const char *haystack, const char *needle, size_t len)``` - Finds the first occurence of substring needle in string haystack with length limit len
 
-```char *ft_strrchr(const char *s, int c)``` - Finds last occurrence of character
+```char *ft_strrchr(const char *s, int c)``` - Finds last occurrence of character c
 
 ```char *ft_strtrim_char(char *str, char c, bool inplace)``` - Remove all occurences of the characters c from both extremities of the string, for inplace see details below
 
@@ -215,6 +215,7 @@ libft2.0/
 # Structures
 
 ## Inplace
+
 ```c
 typedef enum e_Inplace_Type
 {
@@ -231,6 +232,7 @@ string1 = ft_strjoin_ip(string1, " adding text to string1", FREE_S1);
 without the risk of memory leaks
 
 ## Tree traversal
+
 ```c
 typedef enum e_Tree_Travel_Type
 {
@@ -248,6 +250,7 @@ This flag is used to specify in which order should the tree traversal should be 
 </p>
 
 ## Data Types
+
 ```c
 typedef enum e_Datatype
 {
@@ -259,13 +262,21 @@ typedef enum e_Datatype
 ```
 This flag is used for lists of void* to specify the content to be expected
 
+## Coordinates
+
+```c
 typedef struct s_coor
 {
 	double	x;
 	double	y;
 	double	z;
 }	t_coor;
+```
+Implementation of the structure used for vector operations
 
+## List
+
+```c
 typedef struct s_list
 {
 	union
@@ -275,15 +286,20 @@ typedef struct s_list
 	};
 	struct s_list	*next;
 }	t_list;
+```
+Implementation of the structure used for lists
 
+## Tree
+
+```c
 typedef struct s_tree
 {
 	void			*content;
-	struct s_tree	*parent;
 	struct s_tree	*left;
 	struct s_tree	*right;
 }	t_tree;
- of dtype among the following ```[SHORT, INT, FLOAT, DOUBLE, BOOL, CHAR]```
+```
+Implementation of the tree structure
 
 # 🚀 Usage
 
